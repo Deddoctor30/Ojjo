@@ -98,7 +98,7 @@ html, body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-  margin-right: 40px;
+  margin-right: 25px;
 }
 
 .menu__item:last-child {
@@ -109,11 +109,14 @@ html, body {
   line-height: 150%;
   font-size: 14px;
   color: #FFFFFF;
+  -webkit-transition: 0.3s all ease 0s;
+  transition: 0.3s all ease 0s;
+  padding: 10px 15px;
 }
 
 .menu__link:hover {
-  background-color: #d6d458;
-  padding: 10px 15px;
+  background-color: #5c5c5c;
+  border-radius: 4px;
 }
 
 .header__right-bar {
@@ -205,12 +208,35 @@ html, body {
 }
 
 .account__login {
-  line-height: 150%;
+  line-height: 120%;
   font-size: 14px;
   color: #FFFFFF;
-  margin: 0px 40px 0px 0px;
+  -webkit-transition: 0.3s all ease 0s;
+  transition: 0.3s all ease 0s;
+  padding: 10px 15px;
+}
+
+.account__login:hover {
+  background-color: #5c5c5c;
+  border-radius: 4px;
 }
 
 .account__logo {
-  margin: 0px 30px 0px 0px;
+  margin: 0px 15px 0px 25px;
+  padding: 15px;
+}
+
+.account__logo:hover {
+  background-color: #5c5c5c;
+  border-radius: 50%;
+}
+
+.account__like {
+  margin: 0px -15px;
+  padding: 15px;
+}
+
+.account__like:hover {
+  background-color: #5c5c5c;
+  border-radius: 50%;
 }
