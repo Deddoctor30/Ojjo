@@ -1,10 +1,12 @@
 // ____________________Обнуляющий стиль_______________________________
 @import url(/css/Null.css);
 // _________________________Шрифты____________________________________
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(/fonts/gilroy/regular/style.css);
+@import url(/fonts/gilroy/medium/style.css);
 // __________________________Текст____________________________________
+
 html, body {
-   font-family: 'Roboto', sans-serif;
+   font-family: gilroy;
 	font-size: 18px;
    line-height: 1;
    font-weight: 400;
@@ -32,26 +34,25 @@ html, body {
    overflow: hidden;
 
    //_________________Прибить футер к низу_________________
-   // display: flex;
-   // flex-direction: column;
+   display: flex;
+   flex-direction: column;
 }
 
 .header {
-
    &__container {
    }
 }
 
 .container {
-   // //_________________Ширина контейнера_________________
-   // max-width: 1200px;
+   //_________________Ширина контейнера_________________
+   max-width: 1110px;
 
-   // //_____________________По центру_____________________
-   // margin: 0 auto;
+   //_____________________По центру_____________________
+   margin: 0 auto;
 
-   // //_____________________Отступ безопасности_____________________
-   // padding: 0px 15px;
-   // box-sizing: content-box;
+   //_____________________Отступ безопасности_____________________
+   padding: 0px 15px;
+   box-sizing: content-box;
 }
 
 
@@ -62,19 +63,28 @@ html, body {
 
 
 
-
 .header {
-   // //_____________________Наезжает на фон_____________________
-   // position: absolute;
-   // width: 100%;
-   // top: 0;
-   // left: 0;
-   // z-index: 50;
+   //_____________________Наезжает на фон_____________________
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+   background-color: rgb(78, 78, 78);
 
    &__container {
-      // display: flex;
-      // min-height: 100px;
-      // align-items: center;
+   }
+
+   &__inner {
+      margin: 25px 0px 0px 0px;
+      display: flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width:716px) {
+         justify-content: center;
+      }
+
    }
 
    &__logo {
@@ -84,28 +94,123 @@ html, body {
    }
 }
 
-.logo {
 
-   &__img {
-   }
-}
 .menu {
-
+   flex: 0 1 auto;
+   @media (max-width:716px) {
+      display: none;
+   }
    &__list {
       // _____________________Адаптивный отступ у эл. 1 круга вниз, кроме посл._____________________
-      // >*:not(:last-child){
+      // &>*:not(:last-child){
       //    margin: 0px 0px 50px 0px;
       // }
+      display: flex;
+      flex-wrap: wrap;
    }
 
    &__item {
+      flex: 0 1 auto;
+      margin-right: 40px;
+      &:last-child {
+         margin-right: 20px;
+      }
    }
 
    &__link {
       // line-height: calc(([размер интервала]/[размер шрифта])*100%);
+      line-height: 150%;
+      font-size: 14px;
+      color: #FFFFFF;
+      &:hover {
+         background-color: rgb(214, 212, 88);
+         padding: 10px 15px;
+      }
    }
 }
 
+.logo {
+   &__img {
+   }
+}
+
+.header {
+   &__right-bar {
+      display: flex;
+      @media (max-width:716px) {
+         display: none;
+      }
+   }
+   &__search {
+   }
+
+   &__account {
+   }
+}
+
+.search {
+   margin: 0px 0px 0px 60px;
+   justify-self: center;
+   &__inner {
+      height: 100%;
+      // margin: 0px 40px 0px 0px;
+      min-width: 80px;
+      form {
+         width: 100%;
+         background-color: rgba(0, 0, 0, 0);
+         }
+         height: 100%;
+      button {
+         position: relative;
+         &::before {
+            content: "";
+            background-image: url(/img/header/header__search-icon.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            background-size: 20px;
+            height: 20px;
+            width: 20px;
+            top: -13px;
+            left: -25px;
+         }
+      }
+      input {
+         height: 52px;
+         width: 90%;
+         line-height: 150%;
+         font-size: 14px;
+         color: #FFFFFF;
+         background-color: rgba(255, 255, 255, 0);
+            &::placeholder {
+            line-height: 150%;
+            font-size: 14px;
+            color: #FFFFFF;
+         }
+      }
+   }
+}
+
+.account {
+   &__inner {
+      display: flex;
+      align-items: center;
+      height: 52px;
+   }
+
+   &__login {
+      line-height: 150%;
+      font-size: 14px;
+      color: #FFFFFF;
+      margin: 0px 40px 0px 0px;
+   }
+
+   &__logo {
+      margin: 0px 30px 0px 0px;
+   }
+
+   &__like {
+   }
+}
 
 
 

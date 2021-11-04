@@ -1,38 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="shortcut icon" href="img/favicon/favicon.ico">
    <link rel="stylesheet" href="css/style.css">
-   <title>Документ</title>
+   <title>Ojjo</title>
 </head>
 <body>
    <div class="wrapper">
       <header class="header">
          <div class="header__container container">
-            <div class="header__logo logo">
-               <a href="#" class="logo__img"></a>
+            
+            <div class="header__inner">
+               <nav class="header__menu menu">
+                  <ul class="menu__list">
+                     <li class="menu__item">
+                        <a href="#" class="menu__link">Контрагентам</a>
+                     </li>
+                     <li class="menu__item">
+                        <a href="#" class="menu__link">Дизайнерам</a>
+                     </li>
+                     <li class="menu__item">
+                        <a href="#" class="menu__link">Вакансии</a>
+                     </li>
+                  </ul>
+               </nav>
+               
+               <div class="header__logo logo">
+                  <a href="#" class="logo__img">
+                     <img src="/img/header/header__logo.png" alt="logo">
+                  </a>
+               </div>
+
+               <div class="header__right-bar">
+                  <div class="header__search search">
+                     <div class="search__inner">
+                        <form action="#" method="get" enctype="multipart/form-data">
+                           <button type="submit"></button>
+                           <input name="search" type="text" placeholder="Поиск">
+                        </form>
+                     </div>
+                  </div>
+                  
+                   <div class="header__account account">
+                      <div class="account__inner">
+                         <div class="account__login">
+                            <a href="#">Вход/Регистрация</a>
+                         </div>
+                         <div class="account__logo">
+                            <a href="#"><img src="/img/header/header__account-logo.svg" alt="avatar"></a>
+                         </div>
+                         <div class="account__like">
+                            <a href="#"><img src="/img/header/header__accoung-like.svg" alt="like"></a>
+                         </div>
+                      </div>
+                   </div>
+               </div>
             </div>
-            <nav class="header__menu menu">
-               <ul class="menu__list">
-                  <li class="menu__item">
-                     <a href="#" class="menu__link">Элемент</a>
-                  </li>
-                  <li class="menu__item">
-                     <a href="#" class="menu__link">Элемент</a>
-                  </li>
-                  <li class="menu__item">
-                     <a href="#" class="menu__link">Элемент</a>
-                  </li>
-                  <li class="menu__item">
-                     <a href="#" class="menu__link">Элемент</a>
-                  </li>
-               </ul>
-            </nav>
+
          </div>
       </header>
+
+
+
       <main class="page">
          <div class="page__main">
             <div class="page__container">
