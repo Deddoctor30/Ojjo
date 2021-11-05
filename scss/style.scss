@@ -214,18 +214,22 @@ html, body {
    &__logo {
       margin: 0px 15px 0px 25px;
       padding: 15px;
+      background-color: rgba(92, 92, 92, 0);
+      border-radius: 50%;
+      transition: 0.5s all ease 0s;
       &:hover {
          background-color: rgb(92, 92, 92);
-         border-radius: 50%;
       }
    }
 
    &__like {
       margin: 0px -15px;
       padding: 15px;
+      background-color: rgba(92, 92, 92, 0);
+      border-radius: 50%;
+      transition: 0.5s all ease 0s;
       &:hover {
          background-color: rgb(92, 92, 92);
-         border-radius: 50%;
       }
    }
 }
@@ -235,8 +239,8 @@ html, body {
 //______________________________________Page______________________________________
 
 .page {
-   // // Прибить футер к низу
-   // flex: 1 1 auto;
+   // Прибить футер к низу
+   flex: 1 1 auto;
 
    &__main {
    }
