@@ -22,6 +22,7 @@ html, body {
       top: 0;
       left: 0;
       object-fit: cover;
+      object-position: center;
    }
 }
 
@@ -70,7 +71,6 @@ html, body {
    top: 0;
    left: 0;
    z-index: 50;
-   background-color: rgb(78, 78, 78);
 
    &__container {
    }
@@ -81,9 +81,6 @@ html, body {
       min-height: 52px;
       align-items: center;
       justify-content: space-between;
-      @media (max-width:716px) {
-         justify-content: center;
-      }
 
    }
 
@@ -96,7 +93,7 @@ html, body {
 
 
 .menu {
-   flex: 0 1 auto;
+   flex: 0 1 40%;
    @media (max-width:716px) {
       display: none;
    }
@@ -111,7 +108,7 @@ html, body {
 
    &__item {
       flex: 0 1 auto;
-      margin-right: 25px;
+      margin-right: 10px;
       &:last-child {
          margin-right: 20px;
       }
@@ -119,7 +116,7 @@ html, body {
 
    &__link {
       // line-height: calc(([размер интервала]/[размер шрифта])*100%);
-      line-height: 150%;
+      line-height: 200%;
       font-size: 14px;
       color: #FFFFFF;
       transition: 0.3s all ease 0s;
@@ -132,15 +129,25 @@ html, body {
 }
 
 .logo {
+   @media (max-width:716px) {
+      flex: 0 1 50%;
+      text-align: center;
+   }
    &__img {
    }
 }
 
 .header {
    &__right-bar {
+      flex: 0 1 40%;
       display: flex;
+      // flex-wrap: wrap;
+      justify-content: right;
+      @media (max-width:872px) {
+         flex-direction: column-reverse;
+      }
       @media (max-width:716px) {
-         display: none;
+         flex: 0 1 50%;
       }
    }
    &__search {
@@ -152,16 +159,16 @@ html, body {
 
 .search {
    margin: 0px 0px 0px 60px;
-   justify-self: center;
    &__inner {
       height: 100%;
-      // margin: 0px 40px 0px 0px;
-      min-width: 80px;
+      display: flex;
+      justify-content: right;
+      @media (max-width:716px) {
+         justify-content: center;
+      }
       form {
-         width: 100%;
          background-color: rgba(0, 0, 0, 0);
          }
-         height: 100%;
       button {
          position: relative;
          &::before {
@@ -178,7 +185,7 @@ html, body {
       }
       input {
          height: 52px;
-         width: 90%;
+         width: 100px;
          line-height: 150%;
          font-size: 14px;
          color: #FFFFFF;
@@ -197,6 +204,11 @@ html, body {
       display: flex;
       align-items: center;
       height: 52px;
+      margin: 0px 15px 0px 0px;
+      justify-content: right;
+      @media (max-width:716px) {
+         justify-content: center;
+      }
    }
 
    &__login {
@@ -212,7 +224,7 @@ html, body {
    }
 
    &__logo {
-      margin: 0px 15px 0px 25px;
+      margin: 0px 15px 0px 5px;
       padding: 15px;
       background-color: rgba(92, 92, 92, 0);
       border-radius: 50%;
@@ -220,16 +232,24 @@ html, body {
       &:hover {
          background-color: rgb(92, 92, 92);
       }
+      @media (max-width:1037px) {
+         display: none;
+      }
    }
 
    &__like {
       margin: 0px -15px;
-      padding: 15px;
       background-color: rgba(92, 92, 92, 0);
       border-radius: 50%;
       transition: 0.5s all ease 0s;
+      img {
+         padding: 15px;
+      }
       &:hover {
          background-color: rgb(92, 92, 92);
+      }
+      @media (max-width:1037px) {
+         display: none;
       }
    }
 }
@@ -238,16 +258,52 @@ html, body {
 
 //______________________________________Page______________________________________
 
+
 .page {
    // Прибить футер к низу
    flex: 1 1 auto;
 
    &__main {
    }
+}
+
+.main {
 
    &__container {
    }
+
+   &__inner {
+   }
+
+   &__bg {
+      padding: 100% 0px 0px 0px;
+   }
+
+   &__content {
+   }
+
+   &__title {
+   }
+
+   &__catalog {
+   }
+
+   &__partners {
+   }
 }
+.partners {
+
+   &__row {
+   }
+
+   &__colimns {
+   }
+
+   &__item {
+   }
+}
+
+
 //______________________________________Footer______________________________________
 .footer {
 }
