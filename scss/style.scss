@@ -395,6 +395,117 @@ html, body {
    }
 }
 
+//______________________________________Goods______________________________________
+
+.page {
+
+   &__collection {
+   }
+}
+.collection {
+
+   &__container {
+   }
+
+   &__inner {
+   }
+
+   &__text {
+      margin: 100px 0px 0px 0px;
+   }
+
+   &__slider {
+      margin: 0px 0px 55px 0px;
+   }
+
+   &__goods {
+      margin: 0px 0px 120px 0px;
+   }
+}
+
+
+.text {
+   &__subtitle {
+      text-align: center;
+      font-size: 21px;
+      letter-spacing: 140%;
+      margin: 0px 0px 15px 0px;
+   }
+
+   &__title {
+      text-align: center;
+      font-size: 30px;
+      line-height: 41px;
+      font-weight: bold;
+      font-family: 'Noto Serif', serif;
+      margin: 0px 0px 60px 0px;
+   }
+}
+
+
+
+
+.slider {
+
+   &__list {
+      display: flex;
+      gap: 20px;
+      & > :last-child {
+         margin: 0px 6px 0px 0px;
+      }
+   }
+
+   &__item {
+      flex: 0 1 100%;
+      border: 1px solid #D6D6D6;
+      box-shadow: 6px 6px 0 -1px rgb(255, 255, 255), 6px 6px 0 0 #D6D6D6;
+      text-align: center;
+      height: 55px;
+      line-height: 61px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      &:hover {
+         background-color: #333333;
+         color: white;
+         box-shadow: none;
+         height: 61px;
+         margin-bottom: -6px;
+      }
+   }
+}
+
+
+.goods {
+
+   &__items {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+   }
+
+   &__item {
+      position: relative;
+   }
+
+   &__label {
+      position: absolute;
+      top: 79%;
+      left: 50%;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 116%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      transform: translate(-50%, 0px);
+   }
+}
+
+
+
+
+
 
 //______________________________________Footer______________________________________
 .footer {
