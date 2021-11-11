@@ -41,8 +41,8 @@ img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 // _________________________Шрифты____________________________________
-@import url(/fonts/gilroy/regular/style.css);
-@import url(/fonts/gilroy/medium/style.css);
+@import url(./fonts/gilroy/regular/style.css);
+@import url(./fonts/gilroy/medium/style.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
 // __________________________Текст____________________________________
 
@@ -584,7 +584,7 @@ html, body {
 
    &__visitus {
       min-height: 541px;
-      background: url(img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
+      background: url(./img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
    }
 }
 .visitus {
@@ -849,7 +849,7 @@ html, body {
 
    &__contacts {
       min-height: 478px;
-      background: url(img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
+      background: url(./img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
    }
 }
 .contacts {
@@ -900,7 +900,7 @@ html, body {
       display: block;
       &::before {
          content: "";
-         background-image: url(img/contacts/contacts__icon.svg);
+         background-image: url(./img/contacts/contacts__icon.svg);
          background-repeat: no-repeat;
          position: absolute;
          background-size: 20px;
@@ -1128,7 +1128,7 @@ html, body {
          line-height: 150%;
          &::before {
             content: "";
-            background-image: url(img/footer/footer__telephone.svg);
+            background-image: url(./img/footer/footer__telephone.svg);
             background-repeat: no-repeat;
             position: absolute;
             background-size: 20px;
@@ -1145,7 +1145,7 @@ html, body {
       position: relative;
       &::before {
          content: "";
-         background-image: url(img/footer/footer__mail.svg);
+         background-image: url(./img/footer/footer__mail.svg);
          background-repeat: no-repeat;
          position: absolute;
          background-size: 20px;
@@ -1180,7 +1180,7 @@ html, body {
       position: relative;
       &::before {
          content: "";
-         background-image: url(img/footer/footer__vk.svg);
+         background-image: url(./img/footer/footer__vk.svg);
          background-repeat: no-repeat;
          position: absolute;
          background-size: 24px;
@@ -1195,7 +1195,7 @@ html, body {
       position: relative;
       &::before {
          content: "";
-         background-image: url(img/footer/footer__facebook.svg);
+         background-image: url(./img/footer/footer__facebook.svg);
          background-repeat: no-repeat;
          position: absolute;
          background-size: 14px;
@@ -1210,7 +1210,7 @@ html, body {
       position: relative;
       &::before {
          content: "";
-         background-image: url(img/footer/footer__telegram.svg);
+         background-image: url(./img/footer/footer__telegram.svg);
          background-repeat: no-repeat;
          position: absolute;
          background-size: 22px;
@@ -1225,7 +1225,7 @@ html, body {
       position: relative;
       &::before {
          content: "";
-         background-image: url(img/footer/footer__f.svg);
+         background-image: url(./img/footer/footer__f.svg);
          background-repeat: no-repeat;
          position: absolute;
          background-size: 18px;
