@@ -950,7 +950,6 @@ html, body {
 }
 
 .footer {
-
    &__container {
    }
 
@@ -961,29 +960,72 @@ html, body {
    &__top {
       display: flex;
       justify-content: space-between;
-      padding: 0px 0px 60px 0px;
-      margin: 0px 0px 20px 0px;
-      border-bottom: 1px solid #333333;
+      margin: 0px 0px 20px -20px;
+      flex-wrap: wrap;
+      @media (max-width:767px) {
+         &>*:not(:last-child) {
+            margin: 0px 0px 50px 0px;
+         }
+      }
    }
 
    &__link {
       width : 255px;
+      padding: 0px 0px 0px 20px;
+      @media (max-width:1124px) {
+         flex: 0 1 50%;
+         width: 100%;
+      }
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+         width: 100%;
+      }
    }
 
    &__pay {
       width : 255px;
+      padding: 0px 0px 0px 20px;
+      @media (max-width:1124px) {
+         flex: 0 1 50%;
+         width: 100%;
+      }
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+         width: 100%;
+      }
    }
 
    &__contacts {
       width : 295px;
+      padding: 0px 0px 0px 20px;
+      @media (max-width:1124px) {
+         flex: 0 1 50%;
+         width: 100%;
+         margin: 30px 0px 0px 0px;
+      }
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+         width: 100%;
+      }
    }
 
    &__media {
       width : 255px;
+      padding: 0px 0px 0px 20px;
+      @media (max-width:1124px) {
+         flex: 0 1 50%;
+         width: 100%;
+         margin: 30px 0px 0px 0px;
+      }
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+         width: 100%;
+         margin: 0px;
+      }
    }
 
    &__bottom {
-      margin: 0px 0px 20px 0px;
+      flex-wrap: wrap;
    }
 }
 
@@ -993,6 +1035,9 @@ html, body {
       border-bottom: 1px solid #333333;
       padding: 0px 0px 10px 0px;
       margin: 0px 0px 30px 0px;
+      @media (max-width:767px) {
+         margin: 0px 0px 10px 0px;
+      }
    }
 
    &__item {
@@ -1007,9 +1052,13 @@ html, body {
       border-bottom: 1px solid #333333;
       padding: 0px 0px 10px 0px;
       margin: 0px 0px 30px 0px;
+      @media (max-width:767px) {
+         margin: 0px 0px 10px 0px;
+      }
    }
 
    &__text {
+      max-width: 350px;
    }
 
    &__icons {
@@ -1026,6 +1075,9 @@ html, body {
       border-bottom: 1px solid #333333;
       padding: 0px 0px 10px 0px;
       margin: 0px 0px 30px 0px;
+      @media (max-width:767px) {
+         margin: 0px 0px 10px 0px;
+      }
    }
 
    &__tel {
@@ -1033,6 +1085,7 @@ html, body {
          display: block;
          padding: 0px 0px 15px 35px;
          position: relative;
+         line-height: 150%;
          &::before {
             content: "";
             background-image: url(/img/footer/footer__telephone.svg);
@@ -1041,7 +1094,7 @@ html, body {
             background-size: 20px;
             height: 26px;
             width: 26px;
-            top: 1px;
+            top: 5px;
             left: 0px;
          }
       }
@@ -1069,10 +1122,14 @@ html, body {
       border-bottom: 1px solid #333333;
       padding: 0px 0px 10px 0px;
       margin: 0px 0px 30px 0px;
+      @media (max-width:767px) {
+         margin: 0px 0px 10px 0px;
+      }
    }
 
    &__text {
       margin: 0px 0px 22px 0px;
+      max-width: 350px;
    }
 
    &__inner {
@@ -1143,6 +1200,13 @@ html, body {
 .bottom {
    display: flex;
    justify-content: space-between;
+   border-top: 1px solid #333333;
+   margin: 60px 0px 0px 0px;
+   padding: 5px 0px 0px 0px;
    &__text {
+      margin: 10px 15px;
+      // @media (max-width:1124px) {
+      //    margin: 10px 15px;
+      // }
    }
 }
