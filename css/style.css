@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url(fonts/gilroy/regular/style.css);
-@import url(fonts/gilroy/medium/style.css);
+@import url(../fonts/gilroy/regular/style.css);
+@import url(../fonts/gilroy/medium/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
 * {
   padding: 0;
@@ -964,7 +964,7 @@ html, body {
 
 .page__contacts {
   min-height: 478px;
-  background: url(/img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
+  background: url(../img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
 .contacts__subtitle {
