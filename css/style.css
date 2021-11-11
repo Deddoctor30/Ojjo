@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url(./fonts/gilroy/regular/style.css);
-@import url(./fonts/gilroy/medium/style.css);
+@import url(fonts/gilroy/regular/style.css);
+@import url(fonts/gilroy/medium/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
 * {
   padding: 0;
