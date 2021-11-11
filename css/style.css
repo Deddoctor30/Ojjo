@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url(./fonts/gilroy/regular/style.css);
-@import url(./fonts/gilroy/medium/style.css);
+@import url(/fonts/gilroy/regular/style.css);
+@import url(/fonts/gilroy/medium/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
 * {
   padding: 0;
@@ -273,7 +273,7 @@ html, body {
 
 .search__inner button::before {
   content: "";
-  background-image: url(./img/header/header__search-icon.svg);
+  background-image: url(/img/header/header__search-icon.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -691,7 +691,7 @@ html, body {
 
 .page__visitus {
   min-height: 541px;
-  background: url(./img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
+  background: url(/img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
 .visitus__subtitle {
@@ -964,7 +964,7 @@ html, body {
 
 .page__contacts {
   min-height: 478px;
-  background: url(./img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
+  background: url(/img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
 .contacts__subtitle {
@@ -1021,7 +1021,7 @@ html, body {
 
 .contacts__link::before {
   content: "";
-  background-image: url(./img/contacts/contacts__icon.svg);
+  background-image: url(/img/contacts/contacts__icon.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -1328,7 +1328,7 @@ html, body {
 
 .contacts__tel a::before {
   content: "";
-  background-image: url(./img/footer/footer__telephone.svg);
+  background-image: url(/img/footer/footer__telephone.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -1345,7 +1345,7 @@ html, body {
 
 .contacts__mail::before {
   content: "";
-  background-image: url(./img/footer/footer__mail.svg);
+  background-image: url(/img/footer/footer__mail.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -1384,7 +1384,7 @@ html, body {
 
 .media__vk::before {
   content: "";
-  background-image: url(./img/footer/footer__vk.svg);
+  background-image: url(/img/footer/footer__vk.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 24px;
@@ -1400,7 +1400,7 @@ html, body {
 
 .media__facebook::before {
   content: "";
-  background-image: url(./img/footer/footer__facebook.svg);
+  background-image: url(/img/footer/footer__facebook.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 14px;
@@ -1416,7 +1416,7 @@ html, body {
 
 .media__telegram::before {
   content: "";
-  background-image: url(./img/footer/footer__telegram.svg);
+  background-image: url(/img/footer/footer__telegram.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 22px;
@@ -1432,7 +1432,7 @@ html, body {
 
 .media__e::before {
   content: "";
-  background-image: url(./img/footer/footer__f.svg);
+  background-image: url(/img/footer/footer__f.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 18px;
