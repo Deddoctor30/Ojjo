@@ -273,7 +273,7 @@ html, body {
 
 .search__inner button::before {
   content: "";
-  background-image: url(/img/header/header__search-icon.svg);
+  background-image: url(../img/header/header__search-icon.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -691,7 +691,7 @@ html, body {
 
 .page__visitus {
   min-height: 541px;
-  background: url(/img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
+  background: url(../img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
 .visitus__subtitle {
