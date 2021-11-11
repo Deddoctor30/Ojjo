@@ -1254,7 +1254,7 @@ html, body {
 
 .contacts__tel a::before {
   content: "";
-  background-image: url(/img/footer/footer__telephone.svg);
+  background-image: url(../img/footer/footer__telephone.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -1271,7 +1271,7 @@ html, body {
 
 .contacts__mail::before {
   content: "";
-  background-image: url(/img/footer/footer__mail.svg);
+  background-image: url(../img/footer/footer__mail.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 20px;
@@ -1310,7 +1310,7 @@ html, body {
 
 .media__vk::before {
   content: "";
-  background-image: url(/img/footer/footer__vk.svg);
+  background-image: url(../img/footer/footer__vk.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 24px;
@@ -1326,7 +1326,7 @@ html, body {
 
 .media__facebook::before {
   content: "";
-  background-image: url(/img/footer/footer__facebook.svg);
+  background-image: url(../img/footer/footer__facebook.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 14px;
@@ -1342,7 +1342,7 @@ html, body {
 
 .media__telegram::before {
   content: "";
-  background-image: url(/img/footer/footer__telegram.svg);
+  background-image: url(../img/footer/footer__telegram.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 22px;
@@ -1358,7 +1358,7 @@ html, body {
 
 .media__e::before {
   content: "";
-  background-image: url(/img/footer/footer__f.svg);
+  background-image: url(../img/footer/footer__f.svg);
   background-repeat: no-repeat;
   position: absolute;
   background-size: 18px;
