@@ -43,6 +43,7 @@ html, body {
 
 .header {
    &__container {
+
    }
 }
 
@@ -230,8 +231,8 @@ html, body {
    }
 
    &__logo {
-      margin: 0px 15px 0px 5px;
-      padding: 15px;
+      margin: 0px 20px 0px 5px;
+      padding: 10px;
       background-color: rgba(92, 92, 92, 0);
       border-radius: 50%;
       transition: 0.5s all ease 0s;
@@ -249,7 +250,7 @@ html, body {
       border-radius: 50%;
       transition: 0.5s all ease 0s;
       img {
-         padding: 15px;
+         padding: 10px;
       }
       &:hover {
          background-color: rgb(92, 92, 92);

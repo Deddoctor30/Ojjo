@@ -23,7 +23,7 @@
 	 		"margin: $1px $2px $3px $4px;"
 	 	],
 	 	"description": "Margin"
-	 }
+	 },
 	 "Margin-up-down": {
 		//	"scope": "javascript,typescript",
 			"prefix": "aaw",
@@ -31,7 +31,7 @@
 				"margin: $1px $2px;"
 			],
 			"description": "Margin-up-down"
-		}
+		},
 	 "Padding": {
 		//	"scope": "javascript,typescript",
 			"prefix": "ss",
@@ -39,7 +39,7 @@
 				"padding: $1px $2px $3px $4px;"
 			],
 			"description": "Padding"
-		}
+		},
 		"Padding-up-down": {
 			//	"scope": "javascript,typescript",
 				"prefix": "ssw",

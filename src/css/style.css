@@ -278,8 +278,8 @@ html, body {
 }
 
 .account__logo {
-  margin: 0px 15px 0px 5px;
-  padding: 15px;
+  margin: 0px 20px 0px 5px;
+  padding: 10px;
   background-color: rgba(92, 92, 92, 0);
   border-radius: 50%;
   -webkit-transition: 0.5s all ease 0s;
@@ -305,7 +305,7 @@ html, body {
 }
 
 .account__like img {
-  padding: 15px;
+  padding: 10px;
 }
 
 .account__like:hover {
