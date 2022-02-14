@@ -57,12 +57,6 @@ html, body {
    flex-direction: column;
 }
 
-.header {
-   &__container {
-
-   }
-}
-
 .container {
    //_________________Ширина контейнера_________________
    max-width: 1110px;
@@ -90,7 +84,7 @@ html, body {
    z-index: 50;
 
    &__line {
-      background-color: #3333339d;
+      background-color: #333333df;
       height: 5.555rem;
       width: 100%;
       position: fixed;
@@ -124,19 +118,6 @@ html, body {
          justify-content: center;
          width: 100%;
       }
-   }
-
-   &__menu {
-   }
-   &__logo {
-   }
-   &__burger {
-   }
-   &__right-bar {
-   }
-   &__search {
-   }
-   &__account {
    }
 }
 
@@ -213,9 +194,6 @@ html, body {
 
    @media (max-width:612px) {
       left: 40%;
-   }
-
-   &__img {
    }
 }
 
@@ -315,7 +293,7 @@ html, body {
          background-color: rgb(92, 92, 92);
       }
       @media (max-width: 768px) {
-         @include style(1.16rem, 140%);
+         @include style(1.16rem, 140%, #FFFFFF);
       }
    }
 
@@ -483,20 +461,16 @@ html, body {
    }
 
    &__title {
+      @include style(2rem, 140%, #FFFFFF);
       font-weight: 700;
-      font-size: 36px;
-      line-height: 140%;
       font-family: 'Noto Serif', serif;
-      color: #FFFFFF;
       text-align: center;
       margin: 0px 0px 50px 0px;
    }
 
    &__catalog {
+      @include style(1rem, 140%, #FFFFFF);
       font-weight: 500;
-      font-size: 18px;
-      line-height: 140%;
-      color: #FFFFFF;
       text-transform: uppercase;
       padding: 15px 35px;
       display: inline-block;
@@ -617,16 +591,14 @@ html, body {
 
 .text {
    &__subtitle {
+      @include style(1.166rem, 140%, #333333);
       text-align: center;
-      font-size: 21px;
-      letter-spacing: 140%;
       margin: 0px 0px 15px 0px;
    }
 
    &__title {
+      @include style(1.666rem, 140%, #333333);
       text-align: center;
-      font-size: 30px;
-      line-height: 41px;
       font-weight: bold;
       font-family: 'Noto Serif', serif;
       margin: 0px 0px 60px 0px;
@@ -675,10 +647,12 @@ html, body {
       display: flex;
       flex-wrap: wrap;
       margin: 0px 0px -20px -20px;
+      justify-content: center;
    }
 
    &__item {
       position: relative;
+      transform: scale(1, 1);
       padding: 0px 0px 20px 20px;
       flex: 0 1 33.333%;
       @media (max-width:1140px) {
@@ -691,15 +665,13 @@ html, body {
    }
 
    &__label {
+      @include style(1.333rem, 116%, white);
       position: absolute;
       top: 79%;
       left: 50%;
       font-weight: 500;
-      font-size: 24px;
-      line-height: 116%;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: white;
       transform: translate(-45%, 0px);
    }
 
@@ -712,11 +684,16 @@ html, body {
          object-fit: cover;
          object-position: center;
          overflow: hidden;
+         box-shadow: 0px -1px 61px 6px rgba(97,97,97,0.28);
       }
    }
 }
 
-
+.hide-goods {
+   transition: all 1s ease;
+   transform: scale(0.8, 0.8);
+   box-shadow: none;
+}
 
 
 //______________________________________Visit Us______________________________________
@@ -794,34 +771,72 @@ html, body {
       margin: 0px 0px 135px 0px;
    }
 }
+
 .blog {
+   &__container {
+      display: flex;
+   }
 
    &__inner {
+      margin: 0 auto;
    }
 
    &__text {
+      position: relative;
       margin: 120px 0px 0px 0px;
    }
 
+   &__wrap-main {
+      overflow: hidden;
+      height: 370px;
+      width: 500px;
+      margin: 0 auto;
+   }
+
+   &__wrapper {
+      height: 100%;
+      width: 390px;
+      margin: 0 auto;
+   }  
+
+   &__arrow-prew {
+      position: absolute;
+      top: 305px;
+      left: 0px;
+      cursor: pointer;
+      img {
+         transform: rotate(180deg);
+      }
+
+      @media (max-width: 768px) {
+         display: none;
+      }
+   }
+
+   &__arrow-next {
+      position: absolute;
+      top: 330px;
+      left: 680px;
+      transform: translate(0, -50%);
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+         display: none;
+      }
+   }
+    
    &__items {
+      position: relative;
+      left: 20px;
       display: flex;
-      flex-wrap: wrap;
       margin: 0px 0px 75px -20px;
    }
 
    &__item {
       position: relative;
-      margin: 0px 0px 20px 0px;
-      padding: 0px 0px 0px 20px;
-      flex: 0 1 33.333%;
-      overflow: hidden; 
-      @media (max-width:1140px) {
-         flex: 0 1 50%;
-         &:last-child {
-            flex: 0 1 100%;
-            height: 400px;
-         }
-      }
+      text-align: center;
+      margin: 0 auto;
+
       @media (max-width:800px) {
          flex: 0 1 100%;
          height: 300px;
@@ -854,14 +869,14 @@ html, body {
 
 
    &__img {
-      width: 100%;
-      height: 100%;
+      width: 350px;
+      height: 370px;
+      margin: 0 auto;
       img {
          width: 100%;
          height: 100%;
          object-fit: cover;
          object-position: center;
-         overflow: hidden;
       }
    }
 
@@ -873,6 +888,7 @@ html, body {
       line-height: 116%;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      margin: 75px 0px 0px 0px;
       a {
          padding: 15px 35px;
          background-color: #333333;

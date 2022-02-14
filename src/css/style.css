@@ -62,7 +62,7 @@ html, body {
 }
 
 .header__line {
-  background-color: #3333339d;
+  background-color: #333333df;
   height: 5.555rem;
   width: 100%;
   position: fixed;
@@ -578,20 +578,20 @@ html, body {
 }
 
 .main__title {
-  font-weight: 700;
-  font-size: 36px;
+  font-size: 2rem;
   line-height: 140%;
-  font-family: 'Noto Serif', serif;
   color: #FFFFFF;
+  font-weight: 700;
+  font-family: 'Noto Serif', serif;
   text-align: center;
   margin: 0px 0px 50px 0px;
 }
 
 .main__catalog {
-  font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 140%;
   color: #FFFFFF;
+  font-weight: 500;
   text-transform: uppercase;
   padding: 15px 35px;
   display: inline-block;
@@ -708,16 +708,18 @@ html, body {
 }
 
 .text__subtitle {
+  font-size: 1.166rem;
+  line-height: 140%;
+  color: #333333;
   text-align: center;
-  font-size: 21px;
-  letter-spacing: 140%;
   margin: 0px 0px 15px 0px;
 }
 
 .text__title {
+  font-size: 1.666rem;
+  line-height: 140%;
+  color: #333333;
   text-align: center;
-  font-size: 30px;
-  line-height: 41px;
   font-weight: bold;
   font-family: 'Noto Serif', serif;
   margin: 0px 0px 60px 0px;
@@ -768,10 +770,15 @@ html, body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0px 0px -20px -20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .goods__item {
   position: relative;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
   padding: 0px 0px 20px 20px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
@@ -796,15 +803,15 @@ html, body {
 }
 
 .goods__label {
+  font-size: 1.333rem;
+  line-height: 116%;
+  color: white;
   position: absolute;
   top: 79%;
   left: 50%;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 116%;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: white;
   -webkit-transform: translate(-45%, 0px);
           transform: translate(-45%, 0px);
 }
@@ -822,6 +829,17 @@ html, body {
   -o-object-position: center;
      object-position: center;
   overflow: hidden;
+  -webkit-box-shadow: 0px -1px 61px 6px rgba(97, 97, 97, 0.28);
+          box-shadow: 0px -1px 61px 6px rgba(97, 97, 97, 0.28);
+}
+
+.hide-goods {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .page__visitus {
@@ -881,41 +899,80 @@ html, body {
   margin: 0px 0px 135px 0px;
 }
 
-.blog__text {
-  margin: 120px 0px 0px 0px;
-}
-
-.blog__items {
+.blog__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+.blog__inner {
+  margin: 0 auto;
+}
+
+.blog__text {
+  position: relative;
+  margin: 120px 0px 0px 0px;
+}
+
+.blog__wrap-main {
+  overflow: hidden;
+  height: 370px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.blog__wrapper {
+  height: 100%;
+  width: 390px;
+  margin: 0 auto;
+}
+
+.blog__arrow-prew {
+  position: absolute;
+  top: 305px;
+  left: 0px;
+  cursor: pointer;
+}
+
+.blog__arrow-prew img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .blog__arrow-prew {
+    display: none;
+  }
+}
+
+.blog__arrow-next {
+  position: absolute;
+  top: 330px;
+  left: 680px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .blog__arrow-next {
+    display: none;
+  }
+}
+
+.blog__items {
+  position: relative;
+  left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0px 0px 75px -20px;
 }
 
 .blog__item {
   position: relative;
-  margin: 0px 0px 20px 0px;
-  padding: 0px 0px 0px 20px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 33.333%;
-          flex: 0 1 33.333%;
-  overflow: hidden;
-}
-
-@media (max-width: 1140px) {
-  .blog__item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
-  }
-  .blog__item:last-child {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
-    height: 400px;
-  }
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 800px) {
@@ -958,8 +1015,9 @@ html, body {
 }
 
 .blog__img {
-  width: 100%;
-  height: 100%;
+  width: 350px;
+  height: 370px;
+  margin: 0 auto;
 }
 
 .blog__img img {
@@ -969,7 +1027,6 @@ html, body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  overflow: hidden;
 }
 
 .blog__button {
@@ -979,6 +1036,7 @@ html, body {
   line-height: 116%;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  margin: 75px 0px 0px 0px;
 }
 
 .blog__button a {
