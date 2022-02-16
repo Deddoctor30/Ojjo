@@ -165,7 +165,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
    function nextSlide (value) {
       slideField.style.transform = `translateX(-${value}px)`
-      console.log(value);
+      // console.log(value);
    }
 
 
@@ -212,7 +212,7 @@ window.addEventListener('DOMContentLoaded', () => {
          n++;
       }
       nextSlide(offset);
-      console.log(`N = ${n}`);
+      // console.log(`N = ${n}`);
    });
 
 
@@ -231,7 +231,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       nextSlide(offset);
-      console.log(`N = ${n}`);
+      // console.log(`N = ${n}`);
    });
 
 
@@ -279,7 +279,7 @@ window.addEventListener('DOMContentLoaded', () => {
          if (offset < -120) {
             offset = +width.replace(/\D/g, '') * (items.length - 1);
          }
-         console.log(`Перед value ${offset}`);
+         // console.log(`Перед value ${offset}`);
          nextSlide(Math.abs(offset));
       }
 
