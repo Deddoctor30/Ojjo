@@ -369,7 +369,7 @@ html, body {
       span {
          &::after {
             content: "";
-            background-image: url(../src/img/burger/open.png);
+            background-image: url(../img/burger/open.png);
             background-repeat: no-repeat;
             position: absolute;
             width: 34px;
@@ -400,7 +400,7 @@ html, body {
       @media (max-width:768px) {
          &::after {
             content: "";
-            background-image: url(../src/img/burger/close.png);
+            background-image: url(../img/burger/close.png);
             background-repeat: no-repeat;
             position: absolute;
             width: 34px;
