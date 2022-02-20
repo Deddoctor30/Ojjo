@@ -1,9 +1,83 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url(../css/Null.css);
 @import url(../fonts/gilroy/regular/style.css);
 @import url(../fonts/gilroy/medium/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 * {
   -webkit-transition: 0.3s all ease 0s;
   transition: 0.3s all ease 0s;
@@ -31,6 +105,10 @@ html, body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.text__sibtitle--hover a:hover {
+  text-decoration: underline;
 }
 
 .wrapper {
@@ -526,13 +604,7 @@ html, body {
   }
 }
 
-.page {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.page__main {
+.main {
   min-height: 950px;
   position: relative;
 }
@@ -739,6 +811,9 @@ html, body {
 }
 
 .slider__item {
+  font-size: 1rem;
+  line-height: 340%;
+  color: #333333;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -747,7 +822,6 @@ html, body {
           box-shadow: 6px 6px 0 -1px white, 6px 6px 0 0 #D6D6D6;
   text-align: center;
   height: 55px;
-  line-height: 61px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -756,7 +830,7 @@ html, body {
 
 .slider__item:hover {
   background-color: #333333;
-  color: white;
+  color: #FFFFFF;
   -webkit-box-shadow: none;
           box-shadow: none;
   height: 61px;
@@ -805,7 +879,7 @@ html, body {
 .goods__label {
   font-size: 1.333rem;
   line-height: 116%;
-  color: white;
+  color: #FFFFFF;
   position: absolute;
   top: 79%;
   left: 50%;
@@ -833,7 +907,7 @@ html, body {
           box-shadow: 0px -1px 61px 6px rgba(97, 97, 97, 0.28);
 }
 
-.hide-goods {
+.js-hide-goods {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
   -webkit-transform: scale(0.8, 0.8);
@@ -842,33 +916,34 @@ html, body {
           box-shadow: none;
 }
 
-.page__visitus {
+.visitus {
   min-height: 541px;
   background: url(../img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
 .visitus__subtitle {
-  font-size: 21px;
+  font-size: 1.16rem;
   line-height: 140%;
+  color: #FFFFFF;
   text-align: center;
-  color: white;
   padding: 100px 20px 0px 20px;
 }
 
 .visitus__title {
-  font-size: 30px;
-  line-height: 136%;
+  font-size: 1.66rem;
+  line-height: 140%;
+  color: #FFFFFF;
   text-align: center;
-  color: white;
   font-weight: bold;
   padding: 15px 20px 0px 20px;
 }
 
 .visitus__text {
-  margin: 0 auto;
+  font-size: 1rem;
   line-height: 140%;
+  color: #FFFFFF;
+  margin: 0 auto;
   text-align: center;
-  color: white;
   padding: 45px 20px 0px 20px;
   max-width: 730px;
 }
@@ -895,7 +970,7 @@ html, body {
   background-color: #333333;
 }
 
-.page__blog {
+.blog {
   margin: 0px 0px 135px 0px;
 }
 
@@ -919,6 +994,12 @@ html, body {
   height: 370px;
   width: 500px;
   margin: 0 auto;
+}
+
+@media (max-width: 545px) {
+  .blog__wrap-main {
+    width: 390px;
+  }
 }
 
 .blog__wrapper {
@@ -997,12 +1078,20 @@ html, body {
   font-size: 18px;
   line-height: 140%;
   letter-spacing: 0.1em;
-  color: white;
+  color: #FFFFFF;
   -webkit-transform: translate(-48.5%, 0px);
           transform: translate(-48.5%, 0px);
   text-align: center;
   width: 284px;
   overflow: hidden;
+}
+
+.blog__label a {
+  cursor: pointer;
+}
+
+.blog__label a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 800px) {
@@ -1031,7 +1120,7 @@ html, body {
 
 .blog__button {
   text-align: center;
-  color: white;
+  color: #FFFFFF;
   font-weight: 500;
   line-height: 116%;
   letter-spacing: 0.1em;
@@ -1047,16 +1136,12 @@ html, body {
 }
 
 .blog__button a:hover {
-  color: white;
+  color: #FFFFFF;
   background-color: #5c5c5c;
 }
 
-.page__social {
+.social {
   margin: 0px 0px 150px 0px;
-}
-
-.text__sibtitle--hover a:hover {
-  text-decoration: underline;
 }
 
 .social__media {
@@ -1155,24 +1240,24 @@ html, body {
      object-fit: cover;
 }
 
-.page__contacts {
+.contacts {
   min-height: 478px;
   background: url(../img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
 .contacts__subtitle {
-  font-size: 21px;
+  font-size: 1.166rem;
   line-height: 140%;
+  color: #FFFFFF;
   text-align: center;
-  color: white;
   padding: 100px 20px 0px 20px;
 }
 
 .contacts__title {
-  font-size: 30px;
-  line-height: 136%;
+  font-size: 1.66rem;
+  line-height: 140%;
+  color: #FFFFFF;
   text-align: center;
-  color: white;
   font-weight: bold;
   padding: 15px 20px 0px 20px;
   margin: 0px 0px 70px 0px;
@@ -1190,9 +1275,9 @@ html, body {
 }
 
 .contacts__personal {
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 140%;
-  color: white;
+  color: #FFFFFF;
   margin: 0px 80px 0px 0px;
   padding: 0px 0px 0px 55px;
 }
@@ -1323,14 +1408,15 @@ html, body {
 }
 
 .title {
-  font-weight: 500;
+  font-size: 1rem;
   line-height: 140%;
   color: #333333;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .item {
-  font-size: 14px;
+  font-size: 0.77rem;
   line-height: 150%;
   color: #333333;
 }
@@ -1358,7 +1444,9 @@ html, body {
 }
 
 .footer__link {
-  width: 255px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
   padding: 0px 0px 0px 20px;
 }
 
@@ -1381,7 +1469,9 @@ html, body {
 }
 
 .footer__pay {
-  width: 255px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
   padding: 0px 0px 0px 20px;
 }
 
@@ -1403,13 +1493,15 @@ html, body {
   }
 }
 
-.footer__contacts {
-  width: 295px;
+.footer__contactus {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
   padding: 0px 0px 0px 20px;
 }
 
 @media (max-width: 1124px) {
-  .footer__contacts {
+  .footer__contactus {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
@@ -1419,7 +1511,7 @@ html, body {
 }
 
 @media (max-width: 767px) {
-  .footer__contacts {
+  .footer__contactus {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
@@ -1428,7 +1520,9 @@ html, body {
 }
 
 .footer__media {
-  width: 255px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
   padding: 0px 0px 0px 20px;
 }
 
@@ -1500,26 +1594,28 @@ html, body {
   margin: 0px 20px 0px 0px;
 }
 
-.contacts__title-2 {
+.contactus__title-2 {
   border-bottom: 1px solid #333333;
   padding: 0px 0px 10px 0px;
   margin: 0px 0px 30px 0px;
 }
 
 @media (max-width: 767px) {
-  .contacts__title-2 {
+  .contactus__title-2 {
     margin: 0px 0px 10px 0px;
   }
 }
 
-.contacts__tel a {
+.contactus__tel a {
+  font-size: 1rem;
+  line-height: 150%;
+  color: #333333;
   display: block;
   padding: 0px 0px 15px 35px;
   position: relative;
-  line-height: 150%;
 }
 
-.contacts__tel a::before {
+.contactus__tel a::before {
   content: "";
   background-image: url(../img/footer/footer__telephone.svg);
   background-repeat: no-repeat;
@@ -1531,12 +1627,18 @@ html, body {
   left: 0px;
 }
 
-.contacts__mail {
+.contactus__mail {
   padding: 0px 0px 0px 35px;
   position: relative;
 }
 
-.contacts__mail::before {
+.contactus__mail a {
+  font-size: 1rem;
+  line-height: 150%;
+  color: #333333;
+}
+
+.contactus__mail::before {
   content: "";
   background-image: url(../img/footer/footer__mail.svg);
   background-repeat: no-repeat;

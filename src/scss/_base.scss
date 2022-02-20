@@ -1,0 +1,117 @@
+// _________________________________Шрифты____________________________________
+@import url(../fonts/gilroy/regular/style.css);
+@import url(../fonts/gilroy/medium/style.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+// ___________________________________________________________________________
+
+
+// _____________________Адаптивный отступ у эл. 1 круга вниз, кроме посл._____________________
+// &>*:not(:last-child){
+//    margin: 0px 0px 50px 0px;
+// }
+
+// line-height: calc(([размер интервала]/[размер шрифта])*100%);
+
+
+
+
+// _________________________________Переходы____________________________________
+* {
+   transition: 0.3s all ease 0s;
+}
+// ____________________________Дефолтные настройки______________________________
+
+html, body {
+   font-family: gilroy;
+	font-size: 18px;
+   line-height: 1;
+   font-weight: 400;
+	color: black;
+}
+
+
+// ____________________________Дефолтные элементы______________________________
+
+
+.img-adaptiv {
+   position: relative;
+   img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+   }
+}
+
+
+// ____________________________Подчеркивание ссылки______________________________
+.text {
+   &__sibtitle--hover {
+      a {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+// __________________________________Кнопки_______________________________________
+
+// .button_light {
+   
+// }
+
+// .button_dark {
+
+// }
+
+
+
+
+// _____________________________SCSS переменные________________________________
+
+@mixin style($fz, $lh, $c) {
+   font-size: $fz;
+   line-height: $lh;
+   color: $c;
+}
+
+$font_clor_light: #FFFFFF;
+$font_clor_dark: #333333;
+$header_line_color: #333333df;
+
+
+
+
+
+
+
+// __________________________Тело_____________________________________
+
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+
+   //_________________Прибить футер к низу_________________
+   display: flex;
+   flex-direction: column;
+}
+
+.container {
+   //_________________Ширина контейнера_________________
+   max-width: 1110px;
+
+   //_____________________По центру_____________________
+   margin: 0 auto;
+
+   //_____________________Отступ безопасности_____________________
+   padding: 0px 15px;
+   box-sizing: content-box;
+}
+
+
+
+
+

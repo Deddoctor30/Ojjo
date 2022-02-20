@@ -1,0 +1,46 @@
+.visitus {
+   min-height: 541px;
+   background: url(../img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
+   &__inner {
+   }
+
+   &__subtitle {
+      @include style(1.16rem, 140%, $font_clor_light);
+      text-align: center;
+      padding: 100px 20px 0px 20px;
+   }
+
+   &__title {
+      @include style(1.66rem, 140%, $font_clor_light);
+      text-align: center;
+      font-weight: bold;
+      padding: 15px 20px 0px 20px;
+   }
+
+   &__text {
+      @include style(1rem, 140%, $font_clor_light);
+      margin: 0 auto;
+      text-align: center;
+      padding: 45px 20px 0px 20px;
+      max-width: 730px;
+   }  
+
+   &__button {
+      font-weight: 500;
+      color: white;
+      padding: 75px 0px 100px 0px;
+      text-align: center;
+      text-transform: uppercase;
+      a {
+         padding: 15px 35px;
+         background-color: white;
+         color: #333333;
+         border: 1px solid #333333;
+         transition: 0.3s all ease 0s;
+         &:hover {
+            color: white;
+            background-color: #333333;
+         }
+      }
+   }
+}

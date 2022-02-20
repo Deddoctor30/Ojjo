@@ -1,13 +1,15 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
-var __webpack_exports__ = {};
-/*!**************************!*\
-  !*** ./src/js/script.js ***!
-  \**************************/
+/******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-window.addEventListener('DOMContentLoaded', () => {
-  // Меню бургер
+__webpack_require__.r(__webpack_exports__);
+function burger() {
   const inner = document.querySelector('.header__inner'),
         line = document.querySelector('.header__line'),
         menu = document.querySelector('.header__menu'),
@@ -19,112 +21,54 @@ window.addEventListener('DOMContentLoaded', () => {
     menu.classList.toggle('menu-burger');
     bar.classList.toggle('menu-burger');
     burgerTrigger.classList.toggle('hide');
-  }); // Фильтр
+  });
+}
 
+;
+/* harmony default export */ __webpack_exports__["default"] = (burger);
+
+/***/ }),
+
+/***/ "./src/js/modules/filter.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/filter.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function filter() {
   const filtrTrigger = document.querySelectorAll('.slider__item'),
         cards = document.querySelectorAll('.goods__item');
   filtrTrigger.forEach(element => {
     element.addEventListener('click', () => {
       cards.forEach(item => {
-        item.classList.add('hide-goods');
+        item.classList.add('js-hide-goods');
 
         if (item.dataset.goods === element.dataset.goods) {
-          item.classList.remove('hide-goods');
+          item.classList.remove('js-hide-goods');
         }
 
         ;
       });
     });
-  }); // // Слайдер - каруселька
-  // const items = document.querySelectorAll('.blog__item'),
-  //       wrapper = document.querySelector('.blog__wrapper'),
-  //       slideField = document.querySelector('.blog__items'),
-  //       width = window.getComputedStyle(wrapper).width,
-  //       arrowNext = document.querySelector('.blog__arrow-next'),
-  //       arrowPrev = document.querySelector('.blog__arrow-prew');
-  // let offset = 0;
-  // slideField.style.width = 100 * items.length + '%';
-  // items.forEach(item => {
-  //    item.style.width = width;
-  // });
-  // arrowNext.addEventListener('click', () => {
-  //    if (offset >= +width.replace(/\D/g, '') * (items.length - 1)) {
-  //       offset = 0;
-  //    } else {
-  //       offset += +width.replace(/\D/g, '');
-  //    }
-  //    slideField.style.transform = `translateX(-${offset}px)`
-  // });
-  // arrowPrev.addEventListener('click', () => {
-  //    if (offset == 0) {
-  //       offset = +width.replace(/\D/g, '') * (items.length - 1);
-  //    } else {
-  //       offset -= +width.replace(/\D/g, '');
-  //    }
-  //    slideField.style.transform = `translateX(-${offset}px)`;
-  // })
-  // // Тач слайдер
-  // let start = 0;
-  // let move = 0;
-  // let tempOff = 0;
-  // let endTotal = 0;
-  // let n = 1;
-  // // Событие нажать
-  // wrapper.addEventListener('mousedown', swipeMove);
-  // function swipeMove (event) {
-  //    start = event.clientX;
-  //    event.preventDefault();
-  //    // Событие move
-  //    wrapper.addEventListener('mousemove', moveFunc);
-  //    function moveFunc (event) {
-  //       move = start - event.clientX;
-  //       tempOff = move + endTotal;
-  //       if ((move >= +width.replace(/\D/g, '') / 2.5)) {
-  //          nextSlide();
-  //       }
-  //       if (((Math.abs(move) >= +width.replace(/\D/g, '') / 2.5)) && (move < 0)) {
-  //          prevSlide();
-  //       }
-  //       if (tempOff > (+width.replace(/\D/g, '') * (items.length - 1)) + 120) {
-  //          tempOff = 0;
-  //       }
-  //       if (tempOff < -120) {
-  //          tempOff = +width.replace(/\D/g, '') * (items.length - 1);
-  //       }
-  //       if (move > 0) {
-  //          slideField.style.transform = `translateX(-${tempOff}px)`;
-  //       } else {
-  //          slideField.style.transform = `translateX(${tempOff * -1}px)`;
-  //       }
-  //    }
-  //    // Событие отжать
-  //    window.addEventListener('mouseup', () => {
-  //       endTotal = tempOff;
-  //       wrapper.removeEventListener('mousemove', moveFunc);
-  //    });
-  //    function nextSlide () {
-  //       tempOff = n * (+width.replace(/\D/g, ''));
-  //       wrapper.removeEventListener('mousemove', moveFunc);
-  //       if (n === items.length) {
-  //          n = 1;
-  //       } else {
-  //          n++;
-  //       }
-  //    }  
-  //    function prevSlide () {
-  //       if (n === 1) {
-  //          n = items.length;
-  //       } else {
-  //          n--;
-  //       }
-  //       tempOff = (n - 1) * (+width.replace(/\D/g, ''));
-  //       wrapper.removeEventListener('mousemove', moveFunc);
-  //    }
-  // }
+  });
+}
 
+;
+/* harmony default export */ __webpack_exports__["default"] = (filter);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function slider() {
   function nextSlide(value) {
-    slideField.style.transform = `translateX(-${value}px)`;
-    console.log(value);
+    slideField.style.transform = `translateX(-${value}px)`; // console.log(value);
   } // Переменные
   // Слайдер - каруселька
 
@@ -134,14 +78,14 @@ window.addEventListener('DOMContentLoaded', () => {
         slideField = document.querySelector('.blog__items'),
         width = window.getComputedStyle(wrapper).width,
         arrowNext = document.querySelector('.blog__arrow-next'),
-        arrowPrev = document.querySelector('.blog__arrow-prew'); // Тач слайдер
+        arrowPrev = document.querySelector('.blog__arrow-prew'),
+        aLinck = document.querySelectorAll('.blog__item > a'); // Тач слайдер
 
   let start = 0;
   let move = 0;
   let offset = 0;
   let endTotal = 0;
   let n = 1;
-  let tempOff = 0;
   slideField.style.width = 100 * items.length + '%';
   items.forEach(item => {
     item.style.width = width;
@@ -162,8 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
       n++;
     }
 
-    nextSlide(offset);
-    console.log(`N = ${n}`);
+    nextSlide(offset); // console.log(`N = ${n}`);
   }); // Слайд назад по клику стрелки
 
   arrowPrev.addEventListener('click', () => {
@@ -179,17 +122,16 @@ window.addEventListener('DOMContentLoaded', () => {
       n--;
     }
 
-    nextSlide(offset);
-    console.log(`N = ${n}`);
+    nextSlide(offset); // console.log(`N = ${n}`);
   }); //_____________________________
   // Событие нажать
 
   wrapper.addEventListener('mousedown', swipeMove); // Функция нажать
 
   function swipeMove(event) {
+    event.preventDefault();
     endTotal = offset;
-    start = event.clientX;
-    event.preventDefault(); // Событие move
+    start = event.clientX; // Событие move
 
     wrapper.addEventListener('mousemove', moveFunc); // Функция move
 
@@ -214,18 +156,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
       if (offset < -120) {
         offset = +width.replace(/\D/g, '') * (items.length - 1);
-      }
+      } // console.log(`Перед value ${offset}`);
 
-      console.log(`Перед value ${offset}`);
+
       nextSlide(Math.abs(offset));
     } // Событие отжать
 
 
-    window.addEventListener('mouseup', () => {
-      // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
-      endTotal = offset; // Останавливаем функцию слежения при клике
+    window.addEventListener('mouseup', event => {
+      event.preventDefault(); // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
 
-      wrapper.removeEventListener('mousemove', moveFunc);
+      endTotal = offset;
     }); // Выравнить слайд по центру при свайпе вправо
 
     function nextSlideE() {
@@ -263,7 +204,73 @@ window.addEventListener('DOMContentLoaded', () => {
 
     offset = (n - 1) * +width.replace(/\D/g, '');
   }
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (slider);
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
+/*!**************************!*\
+  !*** ./src/js/script.js ***!
+  \**************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
+/* harmony import */ var _modules_filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/filter */ "./src/js/modules/filter.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  (0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_filter__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])(); //__________________ Login ____________________
 });
+}();
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map

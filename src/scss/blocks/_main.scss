@@ -1,0 +1,125 @@
+.main {
+   min-height: 950px;
+   position: relative;
+   &__container {
+   }
+
+   &__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin: -360px 0px 0px 0px;
+      @media (max-width:993px) {
+         margin: -420px 0px 0px 0px;
+      }
+   }
+   
+   &__bg {
+      padding: 950px 0px 0px 0px;
+      z-index: 1;
+   }
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 0px 80px 0px;
+      z-index: 5;
+   }
+
+   &__title {
+      @include style(2rem, 140%, $font_clor_light);
+      font-weight: 700;
+      font-family: 'Noto Serif', serif;
+      text-align: center;
+      margin: 0px 0px 50px 0px;
+   }
+
+   &__catalog {
+      @include style(1rem, 140%, $font_clor_light);
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 15px 35px;
+      display: inline-block;
+      background-color: #333333;
+      border: 1px solid white;
+      letter-spacing: 0.1em;
+      transition: 0.3s all ease 0s;
+      &:hover {
+         z-index: 1;
+         background-color: rgb(92, 92, 92);
+      }
+   }
+
+   &__partners {
+   }
+}
+.partners {
+   z-index: 5;
+   padding: 30px 0px;
+   border-top: 1px solid white;
+   @media (max-width:522px){
+      display: none;
+   }
+
+   &__row {
+   }
+
+   &__colimns {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+
+   &__item {
+      width: 160px;
+      height: 60px;
+      position: relative;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center;
+      }
+   }
+   &__item--line {
+      width: 1px;
+      height: 100%;
+      position: relative;
+      &::after {
+         content: "";
+         border-right: 1px solid white;
+         background-size: 20px;
+         position: absolute;
+         width: 1px;
+         height: 60px;
+         top: 0;
+         left: 0;
+      }
+      @media (max-width:994px){
+         &:nth-child(10){
+            display: none;
+         }
+      }
+      @media (max-width:833px){
+         &:nth-child(8){
+            display: none;
+         }
+         &:nth-child(10){
+            display: none;
+         }
+      }
+      @media (max-width:671px){
+         &:nth-child(10){
+            display: inline;
+         }
+         &:nth-child(8){
+            display: inline;
+         }
+         &:nth-child(6){
+            display: none;
+         }
+      }
+   }
+}
