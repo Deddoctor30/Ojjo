@@ -86,7 +86,7 @@
       font-size: 18px;
       line-height: 140%;
       letter-spacing: 0.1em;
-      color: $font_clor_light;
+      color: $font_color_light;
       transform: translate(-48.5%, 0px);
       text-align: center;
       width: 284px;
@@ -118,23 +118,11 @@
       }
    }
 
-
    &__button {
       text-align: center;
-      color: $font_clor_light;
-      font-weight: 500;
-      line-height: 116%;
+      margin: 0 auto;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin: 75px 0px 0px 0px;
-      a {
-         padding: 15px 35px;
-         background-color: $font_clor_dark;
-         transition: 0.3s all ease 0s;
-         &:hover {
-            color: $font_clor_light;
-            background-color: rgb(92, 92, 92);
-         }
-      }
+      margin-top: 75px;
    }
 }

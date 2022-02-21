@@ -5,13 +5,13 @@
    }
 
    &__subtitle {
-      @include style(1.166rem, 140%, $font_clor_light);
+      @include style(1.166rem, 140%, $font_color_light);
       text-align: center;
       padding: 100px 20px 0px 20px;
    }
 
    &__title {
-      @include style(1.66rem, 140%, $font_clor_light);
+      @include style(1.66rem, 140%, $font_color_light);
       text-align: center;
       font-weight: bold;
       padding: 15px 20px 0px 20px;
@@ -25,7 +25,7 @@
    }
    
    &__personal {
-      @include style(1rem, 140%, $font_clor_light);
+      @include style(1rem, 140%, $font_color_light);
       margin: 0px 80px 0px 0px;
       padding: 0px 0px 0px 55px;
       @media (max-width:815px) {
@@ -66,16 +66,19 @@
    }
 
    &__email {
+      width: 440px;
       align-self: center;
       margin: 15px;
       padding: 20px 22px;
       background-color: white;
    }
    &__form {
+      display: flex;
+      justify-content: space-between;
       input {
          height: 45px;
-         width: 200px;
-         padding: 0px 0px 0px 20px;
+         width: 100%;
+         padding: 0px 10px 0px 10px;
          font-weight: 500;
          font-size: 14px;
          line-height: 16px;
@@ -95,17 +98,21 @@
          }
       }
       button {
+         @include style(0.77rem, 115%, $font_color_light);
          margin: 0px 0px 0px 12px;
          height: 45px;
          width: 160px;
-         background-color: #333333;
-         color: white;
+         background-color: $button_color_dark;
          font-weight: 500;
-         font-size: 14px;
-         line-height: 16px;
          text-align: center;
          letter-spacing: 0.1em;
          text-transform: uppercase;
+         box-shadow: 1px 1px 0 rgb(0, 0, 0) inset, -1px -1px 0 rgb(0, 0, 0) inset;
+         &:hover {
+            background-color: $button_color_light;
+            color: $font_color_dark;
+            // border: 1px solid black;
+         }
          @media (max-width:482px) {
             margin: 10px 0px 0px 0px;
          }

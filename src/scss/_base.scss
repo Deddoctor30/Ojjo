@@ -16,10 +16,15 @@
 
 
 // _________________________________Переходы____________________________________
+
+
 * {
    transition: 0.3s all ease 0s;
 }
+
+
 // ____________________________Дефолтные настройки______________________________
+
 
 html, body {
    font-family: gilroy;
@@ -47,7 +52,28 @@ html, body {
 }
 
 
+// _____________________________SCSS переменные________________________________
+
+
+
+@mixin style($fz, $lh, $c) {
+   font-size: $fz;
+   line-height: $lh;
+   color: $c;
+}
+
+$font_color_light: #FFFFFF;
+$font_color_dark: #333333;
+$button_color_light: #FFFFFF;
+$button_color_dark: #333333;
+$header_line_color: #333333df;
+$modal_bg_color: #FFFFFF;
+
+
+
 // ____________________________Подчеркивание ссылки______________________________
+
+
 .text {
    &__sibtitle--hover {
       a {
@@ -57,38 +83,54 @@ html, body {
       }
    }
 }
+
+
 // __________________________________Кнопки_______________________________________
 
-// .button_light {
-   
-// }
 
-// .button_dark {
+.btn {
+   // Фиксированные размеры
+   width: 300px;
+   height: 65px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-// }
+   // Обтекание
+   // padding: 15px 35px;
 
+   @include style(1rem, 140%, $font_color_light);
+   letter-spacing: 0.1em;
+   font-weight: 500;
 
-
-
-// _____________________________SCSS переменные________________________________
-
-@mixin style($fz, $lh, $c) {
-   font-size: $fz;
-   line-height: $lh;
-   color: $c;
+   // Внутнренняя обводка
+   box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(255, 255, 255) inset;
+   cursor: pointer;
+   &_white {
+      background-color: $button_color_light;
+      color: $font_color_dark;
+      // border: none;
+      &:hover {
+         background-color: $button_color_dark;
+         color: $font_color_light;
+      }
+   }
+   &_dark {
+      background-color: $button_color_dark;
+      color: $font_color_light;
+      box-shadow: 1px 1px 0 rgb(0, 0, 0) inset, -1px -1px 0 rgb(0, 0, 0) inset;
+      // border: none;
+      &:hover {
+         background-color: $button_color_light;
+         color: $font_color_dark;
+         // border: 1px solid black;
+      }
+   }
 }
-
-$font_clor_light: #FFFFFF;
-$font_clor_dark: #333333;
-$header_line_color: #333333df;
-
-
-
-
-
 
 
 // __________________________Тело_____________________________________
+
 
 .wrapper {
    min-height: 100%;
@@ -111,6 +153,9 @@ $header_line_color: #333333df;
    box-sizing: content-box;
 }
 
+
+
+//__________________________show & hide__________________________
 
 
 

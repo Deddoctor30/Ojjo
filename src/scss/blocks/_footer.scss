@@ -1,12 +1,12 @@
 .title {
-   @include style(1rem, 140%, $font_clor_dark);
+   @include style(1rem, 140%, $font_color_dark);
    font-weight: 500;
    text-transform: uppercase;
 }
 
 
 .item {
-   @include style(0.77rem, 150%, $font_clor_dark);
+   @include style(0.77rem, 150%, $font_color_dark);
 }
 
 .footer {
@@ -142,7 +142,7 @@
 
    &__tel {
       a {
-         @include style(1rem, 150%, $font_clor_dark);
+         @include style(1rem, 150%, $font_color_dark);
          display: block;
          padding: 0px 0px 15px 35px;
          position: relative;
@@ -164,7 +164,7 @@
       padding: 0px 0px 0px 35px;
       position: relative;
       a {
-         @include style(1rem, 150%, $font_clor_dark);
+         @include style(1rem, 150%, $font_color_dark);
       }
       &::before {
          content: "";

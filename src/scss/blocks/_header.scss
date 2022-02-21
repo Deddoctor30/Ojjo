@@ -15,6 +15,9 @@
       @media (max-width:994px) {
          height: 134px;
       }
+      @media (max-width:768px) {
+         height: 80px;
+      }
    }
 
    &__container {
@@ -80,15 +83,15 @@
    }
 
    &__link {
-      @include style(0.777rem, 200%, $font_clor_light);
+      @include style(0.777rem, 200%, $font_color_light);
       // transition: 0.3s all ease 0s;
-      padding: 10px 15px;
+      padding: 20px 15px;
       &:hover {
          background-color: rgb(92, 92, 92);
       }
 
       @media (max-width: 768px) {
-         @include style(1.16rem, 140%, $font_clor_light);
+         @include style(1.16rem, 140%, $font_color_light);
       }
    }
 
@@ -112,6 +115,7 @@
 
    @media (max-width:768px) {
       order: 1;
+      top: 14px;
    }
 
    @media (max-width:612px) {
@@ -161,7 +165,11 @@
       @media (max-width:716px) {
          justify-content: center;
       }
+
       form {
+         display: flex;
+         justify-content: center;
+         align-items: center;
          width: 104.5px;
          background-color: rgba(0, 0, 0, 0);
          }
@@ -175,17 +183,17 @@
             background-size: 20px;
             height: 20px;
             width: 20px;
-            top: -13px;
-            left: -25px;
+            top: -9px;
+            left: -27px;
          }
       }
       input {
-         @include style(0.777rem, 150%, $font_clor_light);
-         height: 52px;
+         @include style(0.777rem, 150%, $font_color_light);
+         height: 32px;
          width: 5.555rem;
          background-color: rgba(255, 255, 255, 0);
             &::placeholder {
-            color: $font_clor_light;
+            color: $font_color_light;
          }
       }
    }
@@ -209,13 +217,13 @@
    }
 
    &__login {
-      @include style(0.777rem, 120%, $font_clor_light);
-      padding: 10px 15px;
+      @include style(0.777rem, 120%, $font_color_light);
+      padding: 20px 15px;
       &:hover {
          background-color: rgb(92, 92, 92);
       }
       @media (max-width: 768px) {
-         @include style(1.16rem, 140%, $font_clor_light);
+         @include style(1.16rem, 140%, $font_color_light);
       }
    }
 
@@ -285,7 +293,7 @@
 .burger {
    z-index: 50;
    position: fixed;
-   top: 52px;
+   top: 25px;
    right: 50px;
    @media (max-width:768px) {
       span {

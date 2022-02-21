@@ -59,6 +59,52 @@ function filter() {
 
 /***/ }),
 
+/***/ "./src/js/modules/login.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/login.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function modal() {
+  const modalWindow = document.querySelector('.modal'),
+        modalOpen = document.querySelector('.account__login'); // modalClose = document.querySelector('.account__login');
+
+  function open() {
+    modalWindow.classList.add('js-show');
+    modalWindow.classList.remove('js-hide');
+    document.body.style.overflow = 'hidden';
+    clearInterval(timeOut);
+  }
+
+  ;
+
+  function close() {
+    modalWindow.classList.add('js-hide');
+    modalWindow.classList.remove('js-show');
+    document.body.style.overflow = '';
+  }
+
+  ;
+  modalOpen.addEventListener('click', open); // Закрытие окна на Escape
+
+  document.addEventListener('keyup', event => {
+    if (event.code === 'Escape' && modalWindow.classList.contains('show')) {
+      close();
+    }
+  });
+  modalWindow.addEventListener('click', event => {
+    if (event.target === modalWindow || event.target.getAttribute('data-close') == '') {
+      close();
+    }
+  });
+  const timeOut = setTimeout(open, 555000);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
+
+/***/ }),
+
 /***/ "./src/js/modules/slider.js":
 /*!**********************************!*\
   !*** ./src/js/modules/slider.js ***!
@@ -81,18 +127,18 @@ function slider() {
         arrowPrev = document.querySelector('.blog__arrow-prew'),
         aLinck = document.querySelectorAll('.blog__item > a'); // Тач слайдер
 
-  let start = 0;
-  let move = 0;
-  let offset = 0;
-  let endTotal = 0;
-  let n = 1;
+  let start = 0,
+      move = 0,
+      offset = 0,
+      endTotal = 0,
+      n = 1;
   slideField.style.width = 100 * items.length + '%';
   items.forEach(item => {
     item.style.width = width;
   }); // Слайд вперед по клику стрелки
 
   arrowNext.addEventListener('click', () => {
-    offset += +width.replace(/\D/g, '');
+    offset += +width.replace(/\D/g, '') - move; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!              
 
     if (offset >= +width.replace(/\D/g, '') * items.length) {
       offset = 0;
@@ -107,6 +153,8 @@ function slider() {
     }
 
     nextSlide(offset); // console.log(`N = ${n}`);
+
+    move = 0;
   }); // Слайд назад по клику стрелки
 
   arrowPrev.addEventListener('click', () => {
@@ -163,8 +211,8 @@ function slider() {
     } // Событие отжать
 
 
-    window.addEventListener('mouseup', event => {
-      event.preventDefault(); // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
+    window.addEventListener('mouseup', () => {
+      wrapper.removeEventListener('mousemove', moveFunc); // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
 
       endTotal = offset;
     }); // Выравнить слайд по центру при свайпе вправо
@@ -260,6 +308,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
 /* harmony import */ var _modules_filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/filter */ "./src/js/modules/filter.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/login */ "./src/js/modules/login.js");
+
 
 
 
@@ -268,7 +318,8 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_modules_filter__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])(); //__________________ Login ____________________
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 }();
 /******/ })()

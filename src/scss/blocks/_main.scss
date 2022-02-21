@@ -28,27 +28,18 @@
    }
 
    &__title {
-      @include style(2rem, 140%, $font_clor_light);
+      @include style(2rem, 140%, $font_color_light);
       font-weight: 700;
       font-family: 'Noto Serif', serif;
       text-align: center;
       margin: 0px 0px 50px 0px;
    }
 
-   &__catalog {
-      @include style(1rem, 140%, $font_clor_light);
-      font-weight: 500;
-      text-transform: uppercase;
-      padding: 15px 35px;
-      display: inline-block;
-      background-color: #333333;
-      border: 1px solid white;
-      letter-spacing: 0.1em;
-      transition: 0.3s all ease 0s;
+   &__button {
       &:hover {
-         z-index: 1;
-         background-color: rgb(92, 92, 92);
+         background-color: $font_color_dark;
       }
+      text-transform: uppercase;
    }
 
    &__partners {

@@ -18,11 +18,11 @@ function slider() {
 
 
       // Тач слайдер
-         let start = 0;
-         let move = 0;
-         let offset = 0;
-         let endTotal = 0;
-         let n = 1;
+         let start = 0,
+             move = 0,
+             offset = 0,
+             endTotal = 0,
+             n = 1;
          
 
    slideField.style.width = 100 * items.length + '%';
@@ -34,7 +34,7 @@ function slider() {
 
    // Слайд вперед по клику стрелки
    arrowNext.addEventListener('click', () => {
-      offset += +width.replace(/\D/g, '');
+      offset += (+width.replace(/\D/g, '') - move);                  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!              
       if (offset >= +width.replace(/\D/g, '') * (items.length)) {
          offset = 0;
       }
@@ -49,6 +49,7 @@ function slider() {
       }
       nextSlide(offset);
       // console.log(`N = ${n}`);
+      move = 0;
    });
 
 
@@ -120,8 +121,8 @@ function slider() {
       }
 
       // Событие отжать
-      window.addEventListener('mouseup', (event) => {
-         event.preventDefault();
+      window.addEventListener('mouseup', () => {
+         wrapper.removeEventListener('mousemove', moveFunc);
          // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
          endTotal = offset;
 
