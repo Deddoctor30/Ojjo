@@ -40,18 +40,33 @@ function filter() {
   const filtrTrigger = document.querySelectorAll('.slider__item'),
         cards = document.querySelectorAll('.goods__item');
   filtrTrigger.forEach(element => {
-    element.addEventListener('click', () => {
-      cards.forEach(item => {
-        item.classList.add('js-hide-goods');
+    element.addEventListener('click', event => {
+      if (element.classList.contains('js-hover-goods')) {
+        deleteCards();
+      } else {
+        deleteCards();
+        event.target.classList.add('js-hover-goods');
+        cards.forEach(item => {
+          if (item.dataset.goods !== element.dataset.goods) {
+            item.classList.add('js-hide-goods');
+          }
 
-        if (item.dataset.goods === element.dataset.goods) {
-          item.classList.remove('js-hide-goods');
-        }
-
-        ;
-      });
+          ;
+        });
+      }
     });
   });
+
+  function deleteCards() {
+    // удаляю выделения с триггера
+    filtrTrigger.forEach(item => {
+      item.classList.remove('js-hover-goods');
+    }); // удаляю старые карточки
+
+    cards.forEach(item => {
+      item.classList.remove('js-hide-goods');
+    });
+  }
 }
 
 ;
@@ -138,13 +153,11 @@ function slider() {
   }); // Слайд вперед по клику стрелки
 
   arrowNext.addEventListener('click', () => {
-    offset += +width.replace(/\D/g, '') - move; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!              
+    offset += +width.replace(/\D/g, '') - move;
 
     if (offset >= +width.replace(/\D/g, '') * items.length) {
       offset = 0;
-    } // Попробовать объединить функции      
-    // nextSlideEV ();
-
+    }
 
     if (n === items.length) {
       n = 1;
@@ -152,13 +165,12 @@ function slider() {
       n++;
     }
 
-    nextSlide(offset); // console.log(`N = ${n}`);
-
+    nextSlide(offset);
     move = 0;
   }); // Слайд назад по клику стрелки
 
   arrowPrev.addEventListener('click', () => {
-    offset -= +width.replace(/\D/g, '');
+    offset -= +width.replace(/\D/g, '') + move;
 
     if (offset < 0) {
       offset = +width.replace(/\D/g, '') * (items.length - 1);
@@ -170,7 +182,7 @@ function slider() {
       n--;
     }
 
-    nextSlide(offset); // console.log(`N = ${n}`);
+    nextSlide(offset);
   }); //_____________________________
   // Событие нажать
 
@@ -204,8 +216,7 @@ function slider() {
 
       if (offset < -120) {
         offset = +width.replace(/\D/g, '') * (items.length - 1);
-      } // console.log(`Перед value ${offset}`);
-
+      }
 
       nextSlide(Math.abs(offset));
     } // Событие отжать

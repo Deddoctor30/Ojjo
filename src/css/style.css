@@ -854,10 +854,6 @@ html, body {
       flex-wrap: wrap;
 }
 
-.slider__list > :last-child {
-  margin: 0px 6px 0px 0px;
-}
-
 .slider__item {
   font-size: 1rem;
   line-height: 340%;
@@ -874,9 +870,19 @@ html, body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0px 25px;
+  cursor: pointer;
 }
 
 .slider__item:hover {
+  background-color: #333333;
+  color: #FFFFFF;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 61px;
+  margin-bottom: -6px;
+}
+
+.js-hover-goods {
   background-color: #333333;
   color: #FFFFFF;
   -webkit-box-shadow: none;

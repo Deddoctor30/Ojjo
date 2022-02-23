@@ -34,13 +34,10 @@ function slider() {
 
    // Слайд вперед по клику стрелки
    arrowNext.addEventListener('click', () => {
-      offset += (+width.replace(/\D/g, '') - move);                  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!              
+      offset += +width.replace(/\D/g, '') - move;         
       if (offset >= +width.replace(/\D/g, '') * (items.length)) {
          offset = 0;
       }
-      // Попробовать объединить функции      
-      // nextSlideEV ();
-
 
       if (n === items.length) {
          n = 1;
@@ -48,7 +45,6 @@ function slider() {
          n++;
       }
       nextSlide(offset);
-      // console.log(`N = ${n}`);
       move = 0;
    });
 
@@ -56,7 +52,7 @@ function slider() {
 
    // Слайд назад по клику стрелки
    arrowPrev.addEventListener('click', () => {
-      offset -= +width.replace(/\D/g, '');
+      offset -= +width.replace(/\D/g, '') + move;
       if (offset < 0) {
          offset = +width.replace(/\D/g, '') * (items.length - 1);
       }
@@ -68,7 +64,6 @@ function slider() {
       }
 
       nextSlide(offset);
-      // console.log(`N = ${n}`);
    });
 
 
@@ -116,7 +111,6 @@ function slider() {
          if (offset < -120) {
             offset = +width.replace(/\D/g, '') * (items.length - 1);
          }
-         // console.log(`Перед value ${offset}`);
          nextSlide(Math.abs(offset));
       }
 
@@ -125,7 +119,6 @@ function slider() {
          wrapper.removeEventListener('mousemove', moveFunc);
          // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
          endTotal = offset;
-
       });
 
 

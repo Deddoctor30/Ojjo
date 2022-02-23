@@ -47,9 +47,7 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-      & > :last-child {
-         margin: 0px 6px 0px 0px;
-      }
+
    }
 
    &__item {
@@ -63,6 +61,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 0px 25px;
+      cursor: pointer;
       &:hover {
          background-color: $button_color_dark;
          color: $font_color_light;
@@ -73,6 +72,17 @@
    }
 }
 
+
+.js-hover-goods {
+   background-color: $button_color_dark;
+   color: $font_color_light;
+   box-shadow: none;
+   height: 61px;
+   margin-bottom: -6px;
+   // &:hover{
+   //    margin-bottom: 0;
+   // }
+}
 
 .goods {
 
