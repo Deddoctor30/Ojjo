@@ -12,10 +12,9 @@ function slider() {
                slideField = document.querySelector('.blog__items'),
                width = window.getComputedStyle(wrapper).width,
                arrowNext = document.querySelector('.blog__arrow-next'),
-               arrowPrev = document.querySelector('.blog__arrow-prew'),
-               aLinck = document.querySelectorAll('.blog__item > a');
+               arrowPrev = document.querySelector('.blog__arrow-prew');
 
-
+      console.log(items);
 
       // Тач слайдер
          let start = 0,
@@ -157,7 +156,7 @@ function slider() {
       }
       offset = (n - 1) * (+width.replace(/\D/g, ''));
    }
-
+   console.log('загрузился слайдер');
 };
 
 
