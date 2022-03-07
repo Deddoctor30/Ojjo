@@ -29,6 +29,142 @@ function burger() {
 
 /***/ }),
 
+/***/ "./src/js/modules/cards.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/cards.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/service */ "./src/js/services/service.js");
+
+
+function cards() {
+  class AddCart {
+    constructor(src, alt, parentElement) {
+      this.src = src;
+      this.alt = alt;
+
+      for (var _len = arguments.length, classes = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
+        classes[_key - 3] = arguments[_key];
+      }
+
+      this.classes = classes;
+      this.parentElement = document.querySelector(parentElement);
+      this.changeHTML(); // this.removePrevElements();
+    }
+
+    changeHTML() {
+      let element = document.createElement("div");
+
+      if (this.classes.length === 0) {
+        this.class = 'social__img';
+        element.classList.add(this.class);
+      } else {
+        this.classes.forEach(className => {
+          element.classList.add(className);
+        });
+      }
+
+      element.innerHTML = `
+            <img src=${this.src} alt=${this.alt}></div>
+         `;
+      this.parentElement.after(element);
+    }
+
+    removePrevElements() {
+      this.parentElement.innerHTML = ``;
+    }
+
+  }
+
+  (0,_services_service__WEBPACK_IMPORTED_MODULE_0__.getResource)("http://localhost:3000/cards").then(data => {
+    data.forEach(_ref => {
+      let {
+        src,
+        alt
+      } = _ref;
+      new AddCart(src, alt, '.social__yt-video');
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (cards);
+
+/***/ }),
+
+/***/ "./src/js/modules/email.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/email.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/service */ "./src/js/services/service.js");
+
+
+function email() {
+  const form = document.querySelector('.contacts__form'),
+        modal = document.querySelector('.email-form');
+  let statusMessage;
+  let spinner;
+  const message = {
+    loading: 'Идет загрузка',
+    spinner: '/src/img/spinner/spinner.svg',
+    success: 'Успешно загружено',
+    fail: 'Что-то пошло не так'
+  };
+  postData(form);
+
+  function postData(form) {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      showEmailModal();
+      const formData = new FormData(form);
+      const json = JSON.stringify(Object.fromEntries(formData.entries())); // formData => в массив массивов, потом обратно в объект и в json формат
+
+      (0,_services_service__WEBPACK_IMPORTED_MODULE_0__.posting)('http://localhost:3000/requests', json).then(data => {
+        spinner.remove(); // console.log(data);
+
+        statusMessage.textContent = message.success;
+        form.reset();
+      }).catch(() => {
+        spinner.remove();
+        statusMessage.textContent = message.fail;
+      }).finally(() => {
+        setTimeout(() => {
+          statusMessage.remove();
+          modal.classList.add('js-hide');
+        }, 1500);
+      });
+    });
+  }
+
+  function showEmailModal() {
+    statusMessage = document.createElement('div');
+    statusMessage.textContent = message.loading;
+    statusMessage.style.cssText = `
+         align-self: center;
+         display: inline-block;
+         text-align: center;
+         margin: 0px 20px 0px 0px;
+      `;
+    spinner = document.createElement('img');
+    spinner.style.cssText = `
+         width: 30px;
+         height: 30px;
+      `;
+    spinner.src = message.spinner;
+    document.querySelector('.email-form__content').append(statusMessage);
+    document.querySelector('.email-form__content').append(spinner);
+    modal.classList.remove('js-hide');
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (email);
+
+/***/ }),
+
 /***/ "./src/js/modules/filter.js":
 /*!**********************************!*\
   !*** ./src/js/modules/filter.js ***!
@@ -36,9 +172,9 @@ function burger() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-function filter() {
-  const filtrTrigger = document.querySelectorAll('.slider__item'),
-        cards = document.querySelectorAll('.goods__item');
+function filter(trigger, cardsItems) {
+  const filtrTrigger = document.querySelectorAll(trigger),
+        cards = document.querySelectorAll(cardsItems);
   filtrTrigger.forEach(element => {
     element.addEventListener('click', event => {
       if (element.classList.contains('js-hover-goods')) {
@@ -74,6 +210,27 @@ function filter() {
 
 /***/ }),
 
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function form() {
+  const form = document.querySelector('.contacts__form button');
+
+  function postData(item) {
+    item.AddEventListener('submit', event => {
+      event.prevetDefault();
+    });
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (form);
+
+/***/ }),
+
 /***/ "./src/js/modules/login.js":
 /*!*********************************!*\
   !*** ./src/js/modules/login.js ***!
@@ -81,42 +238,49 @@ function filter() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-function modal() {
-  const modalWindow = document.querySelector('.modal'),
-        modalOpen = document.querySelector('.account__login'); // modalClose = document.querySelector('.account__login');
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "open": function() { return /* binding */ open; },
+/* harmony export */   "close": function() { return /* binding */ close; }
+/* harmony export */ });
+function open(modal, timeOut) {
+  const modalWindow = document.querySelector(modal);
+  modalWindow.classList.add('js-show');
+  modalWindow.classList.remove('js-hide');
+  document.body.style.overflow = 'hidden';
+  clearInterval(timeOut);
+}
 
-  function open() {
-    modalWindow.classList.add('js-show');
-    modalWindow.classList.remove('js-hide');
-    document.body.style.overflow = 'hidden';
-    clearInterval(timeOut);
-  }
+;
 
-  ;
+function close(modal) {
+  const modalWindow = document.querySelector(modal);
+  modalWindow.classList.add('js-hide');
+  modalWindow.classList.remove('js-show');
+  document.body.style.overflow = '';
+}
 
-  function close() {
-    modalWindow.classList.add('js-hide');
-    modalWindow.classList.remove('js-show');
-    document.body.style.overflow = '';
-  }
+;
 
-  ;
-  modalOpen.addEventListener('click', open); // Закрытие окна на Escape
+function modal(modal, trigger, timeOut) {
+  const modalWindow = document.querySelector(modal),
+        modalOpen = document.querySelector(trigger);
+  modalOpen.addEventListener('click', () => open(modal, timeOut)); // Закрытие окна на Escape
 
   document.addEventListener('keyup', event => {
     if (event.code === 'Escape' && modalWindow.classList.contains('show')) {
-      close();
+      close(modal);
     }
   });
   modalWindow.addEventListener('click', event => {
     if (event.target === modalWindow || event.target.getAttribute('data-close') == '') {
-      close();
+      close(modal);
     }
   });
-  const timeOut = setTimeout(open, 555000);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);
+
+
 
 /***/ }),
 
@@ -127,20 +291,28 @@ function modal() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-function slider() {
+// import cards from "./cards"
+function slider(_ref) {
+  let {
+    container,
+    cards,
+    wrap,
+    nextArr,
+    prevArr
+  } = _ref;
+
   function nextSlide(value) {
-    slideField.style.transform = `translateX(-${value}px)`; // console.log(value);
+    slideField.style.transform = `translateX(-${value}px)`;
   } // Переменные
   // Слайдер - каруселька
 
 
-  const items = document.querySelectorAll('.blog__item'),
-        wrapper = document.querySelector('.blog__wrapper'),
-        slideField = document.querySelector('.blog__items'),
+  const items = document.querySelectorAll(cards),
+        wrapper = document.querySelector(wrap),
+        slideField = document.querySelector(container),
         width = window.getComputedStyle(wrapper).width,
-        arrowNext = document.querySelector('.blog__arrow-next'),
-        arrowPrev = document.querySelector('.blog__arrow-prew'),
-        aLinck = document.querySelectorAll('.blog__item > a'); // Тач слайдер
+        arrowNext = document.querySelector(nextArr),
+        arrowPrev = document.querySelector(prevArr); // Тач слайдер
 
   let start = 0,
       move = 0,
@@ -183,6 +355,7 @@ function slider() {
     }
 
     nextSlide(offset);
+    move = 0;
   }); //_____________________________
   // Событие нажать
 
@@ -201,11 +374,13 @@ function slider() {
 
       if (move >= +width.replace(/\D/g, '') / 2.5) {
         nextSlideE();
+        move = 0;
       } // Проверка выравнить слайд по центру при свайпе влево   [коэффициент 2.5 - доля от ширины слайдера, при которой произойдет выравнивание]
 
 
       if (Math.abs(move) >= +width.replace(/\D/g, '') / 2.5 && move < 0) {
         prevSlideE();
+        move = 0;
       } // Перемотка в начало
 
 
@@ -268,6 +443,48 @@ function slider() {
 ;
 /* harmony default export */ __webpack_exports__["default"] = (slider);
 
+/***/ }),
+
+/***/ "./src/js/services/service.js":
+/*!************************************!*\
+  !*** ./src/js/services/service.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getResource": function() { return /* binding */ getResource; },
+/* harmony export */   "posting": function() { return /* binding */ posting; }
+/* harmony export */ });
+const getResource = async url => {
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error(`Could not fetch ${url}, statys: ${res.status}`);
+  }
+
+  return await res.json(); // res.json() - метод у fetch'a который json формат переводит в обычный объект для юзания на сайте
+};
+
+const posting = async (url, data) => {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: data
+  });
+
+  if (!res.ok) {
+    throw new Error(`Could not fetch ${url}, statys: ${res.status}`);
+  }
+
+  return await res.json();
+};
+
+
+
+
 /***/ })
 
 /******/ 	});
@@ -297,6 +514,23 @@ function slider() {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -320,6 +554,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/filter */ "./src/js/modules/filter.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/login */ "./src/js/modules/login.js");
+/* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/cards */ "./src/js/modules/cards.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_email__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/email */ "./src/js/modules/email.js");
+
+
+
+
 
 
 
@@ -327,10 +568,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
+  const timeOut = setTimeout(() => (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__.open)('.modal', timeOut), 5000);
+  (0,_modules_form__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_modules_filter__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_filter__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', '.goods__item');
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    container: '.blog__items',
+    cards: '.blog__item',
+    wrap: '.blog__wrapper',
+    nextArr: '.blog__arrow-next',
+    prevArr: '.blog__arrow-prew'
+  });
+  (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__["default"])('.modal', '.account__login', timeOut);
+  (0,_modules_cards__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_modules_email__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 }();
 /******/ })()

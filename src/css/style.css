@@ -1888,3 +1888,23 @@ html, body {
 .js-hide {
   display: none;
 }
+
+.email-form {
+  background-color: none;
+}
+
+.email-form__dialog {
+  margin: 45vh auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.email-form__content {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

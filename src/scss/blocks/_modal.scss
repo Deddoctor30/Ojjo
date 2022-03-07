@@ -82,3 +82,16 @@
  .js-hide {
     display: none;
  }
+
+ .email-form {
+    background-color: none;
+    &__dialog{
+        margin: 45vh auto;
+        display: flex;
+    }
+
+    &__content{
+        justify-content: center;
+        display: flex;
+    }
+ }

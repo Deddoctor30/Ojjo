@@ -1,20 +1,19 @@
-function slider() {
+// import cards from "./cards"
+
+function slider({container, cards, wrap, nextArr, prevArr}) {
    function nextSlide (value) {
       slideField.style.transform = `translateX(-${value}px)`
-      // console.log(value);
    }
-
 
    // Переменные
       // Слайдер - каруселька
-         const items = document.querySelectorAll('.blog__item'),
-               wrapper = document.querySelector('.blog__wrapper'),
-               slideField = document.querySelector('.blog__items'),
+         const items = document.querySelectorAll(cards),
+               wrapper = document.querySelector(wrap),
+               slideField = document.querySelector(container),
                width = window.getComputedStyle(wrapper).width,
-               arrowNext = document.querySelector('.blog__arrow-next'),
-               arrowPrev = document.querySelector('.blog__arrow-prew');
+               arrowNext = document.querySelector(nextArr),
+               arrowPrev = document.querySelector(prevArr);
 
-      console.log(items);
 
       // Тач слайдер
          let start = 0,
@@ -63,13 +62,12 @@ function slider() {
       }
 
       nextSlide(offset);
+      move = 0;
    });
 
 
 
 //_____________________________
-
-
 
 
    // Событие нажать
@@ -94,11 +92,13 @@ function slider() {
          // Проверка выравнить слайд по центру при свайпе вправо  [коэффициент 2.5 - доля от ширины слайдера, при которой произойдет выравнивание]
          if ((move >= +width.replace(/\D/g, '') / 2.5)) {
             nextSlideE();
+            move = 0;
          }
 
          // Проверка выравнить слайд по центру при свайпе влево   [коэффициент 2.5 - доля от ширины слайдера, при которой произойдет выравнивание]
          if (((Math.abs(move) >= +width.replace(/\D/g, '') / 2.5)) && (move < 0)) {
             prevSlideE();
+            move = 0;
          }
 
          // Перемотка в начало
@@ -156,7 +156,7 @@ function slider() {
       }
       offset = (n - 1) * (+width.replace(/\D/g, ''));
    }
-   console.log('загрузился слайдер');
+
 };
 
 

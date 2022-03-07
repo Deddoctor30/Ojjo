@@ -1,6 +1,6 @@
-function filter() {
-   const filtrTrigger = document.querySelectorAll('.slider__item'),
-         cards = document.querySelectorAll('.goods__item');
+function filter(trigger, cardsItems) {
+   const filtrTrigger = document.querySelectorAll(trigger),
+         cards = document.querySelectorAll(cardsItems);
 
    filtrTrigger.forEach((element) => {
       element.addEventListener('click', event => {
@@ -19,7 +19,6 @@ function filter() {
       });
    });
 
-
    function deleteCards() {
       // удаляю выделения с триггера
       filtrTrigger.forEach(item => {
@@ -30,9 +29,6 @@ function filter() {
          item.classList.remove('js-hide-goods')
       });
    }
-
-
-
 };
 
 export default filter;

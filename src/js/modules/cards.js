@@ -3,10 +3,8 @@ import {getResource} from "../services/service"
 function cards () {
 
    class AddCart {
-      constructor(url, label, img, alt, parentElement, ...classes) {
-         this.url = url;
-         this.label = label;
-         this.img = img;
+      constructor(src, alt, parentElement, ...classes) {
+         this.src = src;
          this.alt = alt;
          this.classes = classes;
          this.parentElement = document.querySelector(parentElement);
@@ -15,10 +13,10 @@ function cards () {
       }
 
       changeHTML() {
-         const element = document.createElement("div");
+         let element = document.createElement("div");
 
          if (this.classes.length === 0) {
-            this.class = 'blog__item';
+            this.class = 'social__img';
             element.classList.add(this.class);
          } else {
             this.classes.forEach(className => {
@@ -27,25 +25,23 @@ function cards () {
          }
 
          element.innerHTML = `
-            <div class="blog__label"><a href=${this.url}>${this.label}</a></div>
-            <div class="blog__img"><img src=${this.img} alt=${this.alt}></div 
+            <img src=${this.src} alt=${this.alt}></div>
          `;
 
-         this.parentElement.append(element);
+         this.parentElement.after(element);
       }
 
       removePrevElements() {
          this.parentElement.innerHTML = ``;
       }
    }
-
    getResource("http://localhost:3000/cards")
       .then(data => {
-         data.forEach(({url, label, img, alt}) => {
-            new AddCart(url, label, img, alt, '.blog__items')
+         data.forEach(({src, alt}) => {
+            new AddCart(src, alt, '.social__yt-video')
          });
       });
-      console.log('загрузилось html');
 }
+
 
 export default cards;
