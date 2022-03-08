@@ -39,7 +39,7 @@
          transform: rotate(180deg);
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
          display: none;
       }
    }
@@ -50,9 +50,9 @@
       left: 680px;
       transform: translate(0, -50%);
       cursor: pointer;
-
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
          display: none;
+         left: 650px;
       }
    }
     

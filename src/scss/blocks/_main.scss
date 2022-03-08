@@ -36,6 +36,9 @@
    }
 
    &__button {
+      a {
+         padding: 20px 50px;
+      }
       &:hover {
          background-color: $font_color_dark;
       }

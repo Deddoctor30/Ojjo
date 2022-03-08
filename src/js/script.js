@@ -10,7 +10,7 @@ import email from './modules/email';
 import {open} from './modules/login';
 
 window.addEventListener('DOMContentLoaded', () => {
-   const timeOut = setTimeout(() => open('.modal', timeOut), 5000);
+   const timeOut = setTimeout(() => open('.modal', timeOut), 50000);
 
    form();
    burger();

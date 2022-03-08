@@ -723,6 +723,10 @@ html, body {
   text-transform: uppercase;
 }
 
+.main__button a {
+  padding: 20px 50px;
+}
+
 .main__button:hover {
   background-color: #333333;
 }
@@ -971,7 +975,7 @@ html, body {
 }
 
 .visitus {
-  min-height: 541px;
+  height: 100%;
   background: url(../img/visitus/visitus__bg.jpg) 0 0/100% 100% repeat;
 }
 
@@ -981,6 +985,12 @@ html, body {
   color: #FFFFFF;
   text-align: center;
   padding: 100px 20px 0px 20px;
+}
+
+@media (max-width: 768px) {
+  .visitus__subtitle {
+    padding: 50px 20px 0px 20px;
+  }
 }
 
 .visitus__title {
@@ -1006,6 +1016,13 @@ html, body {
 .visitus__button {
   margin: 0 auto;
   text-transform: uppercase;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .visitus__button {
+    margin-bottom: 50px;
+  }
 }
 
 .blog {
@@ -1058,7 +1075,7 @@ html, body {
           transform: rotate(180deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .blog__arrow-prew {
     display: none;
   }
@@ -1073,9 +1090,10 @@ html, body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .blog__arrow-next {
     display: none;
+    left: 650px;
   }
 }
 

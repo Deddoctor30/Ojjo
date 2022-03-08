@@ -568,7 +568,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-  const timeOut = setTimeout(() => (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__.open)('.modal', timeOut), 5000);
+  const timeOut = setTimeout(() => (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__.open)('.modal', timeOut), 50000);
   (0,_modules_form__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_modules_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_modules_filter__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', '.goods__item');
