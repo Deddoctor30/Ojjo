@@ -1926,3 +1926,52 @@ html, body {
   display: -ms-flexbox;
   display: flex;
 }
+
+.catalog {
+  margin: 210px 0px 0px 0px;
+}
+
+.catalog__filter {
+  margin: 0px 0px 60px 0px;
+}
+
+.catalog__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.catalog__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+}
+
+.catalog__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 0px 150px 0px;
+}
+
+.catalog__info {
+  max-width: 540px;
+  margin: 0px 103px 0px 0px;
+}
+
+.service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 277px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.service__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}

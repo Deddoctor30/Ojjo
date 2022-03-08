@@ -1,0 +1,64 @@
+.catalog {
+   margin: 210px 0px 0px 0px;
+   &__wrapper {
+   }
+
+   &__container {
+   }
+
+   &__filter {
+      margin: 0px 0px 60px 0px;
+   }
+
+   &__content {
+   }
+
+   &__cards {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   &__item {
+      flex: 0 1 33.333%;
+   }
+
+   &__show-more {
+   }
+
+   &__description {
+      display: flex;
+      margin: 0px 0px 150px 0px;
+   }
+
+   &__info {
+      max-width: 540px;
+      margin: 0px 103px 0px 0px;
+   }
+
+   &__service {
+   }
+}
+.container {
+}
+.item {
+
+   &__img {
+   }
+
+   &__type {
+   }
+
+   &__name {
+   }
+
+   &__price {
+   }
+}
+.service {
+   display: flex;
+   max-height: 277px;
+   flex-wrap: wrap;
+   &__item {
+      flex: 0 1 50%;
+   }
+}
