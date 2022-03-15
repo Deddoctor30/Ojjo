@@ -72,93 +72,64 @@
          </div>
       </header>
 
-      <section class="catalog">
-         <div class="catalog__wrapper">
-            <div class="catalog__container container">
-               <div class="catalog__filter">
-                  <form class="catalog__form" action="#" method="get" enctype="multipart/form-data">
-                     <select name="brand" id="brand">
-                        <option value="default">Бренд</option>
-                           <option value="dg">Dolce & Gabanna</option>
-                           <option value="dg">Dolce & Gabanna</option>
-                           <option value="dg">Dolce & Gabanna</option>
-                           <option value="dg">Dolce & Gabanna</option>
-                           <option value="dg">Dolce & Gabanna</option>
-                     </select>
-                     <select name="price" id="price">
-                        <option value="default">Цена</option>
-                        <option value="dg">до 100 000</option>
-                        <option value="dg">от 100 000</option>
-                     </select>
-                     <select name="for" id="for">
-                        <option value="default">Для кого</option>
-                        <option value="dg">Для женщины</option>
-                        <option value="dg">Для мужчины</option>
-                     </select>
-                     <select name="collection" id="collection">
-                        <option value="default">Коллекция</option>
-                        <option value="dg">Авторские работы</option>
-                        <option value="dg">Популярное</option>
-                     </select>
-                     <select name="season" id="season">
-                        <option value="default">Сезон</option>
-                        <option value="dg">Весеннее настроение</option>
-                        <option value="dg">Летняя прогулка</option>
-                     </select>
-                     <select name="event" id="event">
-                        <option value="default">Событие</option>
-                        <option value="dg">Свадьба</option>
-                        <option value="dg">Юбилей</option>
-                        <option value="dg">Подарок любимой</option>
-                     </select>
-                  </form>
-               </div>
-               <div class="catalog__content">
-                  <div class="catalog__cards">
-                     <div class="catalog__card card">
-                        <div class="card__img"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
-                        <div class="card__type">Подвеска</div>
-                        <div class="card__name">Dolce & Gabanna</div>
-                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+      <section class="navigation">
+         <div class="nav__container container">
+            <div class="navigation__nav nav">
+               <span class="nav__link"><a href="./index.html">Главная</a></span>
+               <span class="nav__link"><a href="./catalog.html">Каталог</a></span>
+               <span class="nav__link"><span>Категория</span></span>
+               <span class="nav__current">Подвеска Dolce & Gabarra</span>
+            </div>
+         </div>
+      </section>
+
+      <section class="product">
+        <div class="product__wrapper">
+           <div class="product__container container">
+              <!-- <div class="product__nav nav">
+                 <span class="nav__link"><a href="./index.html">Главная</a></span>
+                 <span class="nav__link"><a href="./catalog.html">Каталог</a></span>
+                 <span class="nav__link"><span>Категория</span></span>
+                 <span class="nav__current">Подвеска Dolce & Gabarra</span>
+              </div> -->
+
+              <div class="product__content">
+                 <div class="product__images">
+                    <div class="product__main-image"><img src="./img/card/Rectangle23.jpg" alt="img-main"></div>
+                    <div class="product__bottop-images">
+                     <img src="./img/card/Rectangle23.jpg" alt="img-second">
+                     <img src="./img/card/Rectangle23.jpg" alt="img-third">
+                     <img src="./img/card/Rectangle23.jpg" alt="img-forth">
+                    </div>
+                 </div>
+                 <div class="product__item-desc item-descr">
+                     <div class="item-descr__wrapper">
+                        <div class="item-descr__title">Подвеска Dolce & Gabbara</div>
+                        <div class="item-descr__info">
+                           <div class="item-descr__category">
+                              <p>Категория:</p>
+                              <span>Подвески</span>
+                           </div>
+                           <div class="item-descr__brand">
+                              <p>Бренд:</p>
+                           <span>Dolce & Gabbara</span>
+                           </div>
+                        </div>
+                        <span class="item-descr__driver"></span>
+                        <div class="item-descr__descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, molestias est tempore et recusandae atque dicta maiores consectetur mollitia ut quis, cumque aperiam corporis commodi asperiores laboriosam. Exercitationem, eveniet rerum.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, molestias est tempore et recusandae atque dicta maiores consectetur mollitia ut quis, cumque aperiam corporis commodi asperiores laboriosam. Exercitationem, eveniet rerumLorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, molestias est tempore et recusandae atque dicta maiores consectetur mollitia ut quis, cumque aperiam corporis commodi asperiores laboriosam. Exercitationem, eveniet rerum</div>
+                        <div class="item-descr__price">200 000 ₽</div>
+                        <div class="item-descr__buying">
+                           <div class="item-descr__buy btn btn_dark">купить</div>
+                           <div class="item-descr__shop btn btn_white">добавить в корзину</div>
+                        </div>
                      </div>
-                     <div class="catalog__card card">
-                        <div class="card__img"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
-                        <div class="card__type">Подвеска</div>
-                        <div class="card__name">Dolce & Gabanna</div>
-                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
-                     </div>
-                     <div class="catalog__card card">
-                        <div class="card__img"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
-                        <div class="card__type">Подвеска</div>
-                        <div class="card__name">Dolce & Gabanna</div>
-                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
-                     </div>
-                     <span class="catalog__line"></span>
-                     <div class="catalog__card card">
-                        <div class="card__img"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
-                        <div class="card__type">Подвеска</div>
-                        <div class="card__name">Dolce & Gabanna</div>
-                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
-                     </div>
-                     <div class="catalog__card card">
-                        <div class="card__img"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
-                        <div class="card__type">Подвеска</div>
-                        <div class="card__name">Dolce & Gabanna</div>
-                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
-                     </div>
-                     <div class="catalog__card card">
-                        <div class="card__img"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
-                        <div class="card__type">Подвеска</div>
-                        <div class="card__name">Dolce & Gabanna</div>
-                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
-                     </div>
-                  </div>
-                  <div class="catalog__show-more btn btn_dark">Покажите еще</div>
-               </div>
-               <div class="catalog__description description">
+                 </div>
+              </div>
+
+               <div class="product__description description">
                   <div class="description__text">
                      <div class="description__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente dolorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente dolorem</div>
-                  <span>читать полностью</span>
+                     <span>читать полностью</span>
                   </div>
                   <div class="description__service service">
                      <div class="service__item">
@@ -179,8 +150,8 @@
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+           </div>
+        </div>
       </section>
 
       <section class="contacts">

@@ -1,0 +1,170 @@
+.product {
+
+   &__wrapper {
+   }
+
+   &__container {
+   }
+
+   // &__nav {
+   //    margin: 170px 0px 51px 0px;
+   // }
+
+   &__content {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__images {
+      display: flex;
+      flex-direction: column;
+      min-height: 580px;
+      width: 540px;
+   }
+
+   &__main-image {
+      margin: 0px 0px 30px 0px;
+   }
+
+   &__bottop-images {
+      display: flex;
+      justify-content: space-between;
+      img {
+         width: 160px;
+         height: 120px;
+      }
+   }
+
+   &__item-desc {
+   }
+
+   &__description {
+      margin: 0px 0px 150px 0px;
+   }
+}
+
+.nav {
+   text-align: center;
+   @include style(0.888rem, 175%, $font_color_dark);
+   &>*:not(:last-child){
+      margin-right: 15px;
+      &::after{
+         content: "/";
+         margin-left: 15px;
+      }
+   }
+   &__link {
+      a {
+         // text-decoration: underline;
+         border-bottom: 1px solid #000000;
+      }
+      span {
+         // text-decoration: underline;
+         border-bottom: 1px solid #000000;
+      }
+   }
+
+   &__current {
+      color: #1d9bf0;
+   }
+}
+.item-descr {
+   min-height: 580px;
+   width: 540px;
+   border: 1px solid #D6D6D6;
+   
+   &__wrapper {
+      margin: 10px;
+      // padding: 10px;
+      border: 1px solid #D6D6D6;
+      padding: 40px 30px 40px 30px;
+      min-height: 558px;
+   }
+   
+   &__title {
+      @include style(1.333rem, 150%, $font_color_dark);
+      text-transform: uppercase;
+      margin: 0px 0px 30px 0px;
+      font-weight: 500;
+   }
+
+   &__info {
+      display: flex;
+      @include style(0.888rem, 150%, #979797);
+      margin: 0px 0px 30px 0px;
+   }
+
+   &__driver {
+      display: block;
+      border-bottom: 1px solid #D6D6D6;
+      width: 460px;
+      height: 1px;
+      margin: 0px 0px 30px 0px;
+   }
+
+   &__category {
+      display: flex;
+      margin: 0px 25px 0px 0px;
+      p {
+         margin: 0px 15px 0px 0px;
+      }
+   }
+
+   &__brand {
+      display: flex;
+      p {
+         margin: 0px 15px 0px 0px;
+      }
+   }
+
+   &__descr {
+      margin: 0px 0px 30px 0px;
+   }
+
+   &__price {
+      @include style(1.333rem, 120%, $font_color_dark);
+      font-weight: 500;
+      margin: 0px 0px 30px 0px;
+   }
+
+   &__buying {
+      display: flex;
+   }
+
+   &__buy {
+      margin: 0px 30px 30px 0px;
+      @include style(1rem, 150%, $button_color_light);
+      text-transform: uppercase;
+      height: 41px;
+      width: 110px;
+   }
+
+   &__shop {
+      @include style(1rem, 150%, $button_color_dark);
+      text-transform: uppercase;
+      height: 43px;
+      width: 247px;
+      letter-spacing: 0.05em
+   }
+}
+
+.description {
+
+   &__text {
+   }
+
+   &__info {
+   }
+
+   &__service {
+   }
+}
+
+.service {
+
+   &__item {
+   }
+
+   &__img {
+   }
+}
