@@ -9,6 +9,7 @@ import form from './modules/form';
 import email from './modules/email';
 import {open} from './modules/login';
 import catalog from './modules/catalog';
+import catalogSlider from './modules/catalog-slider';
 
 window.addEventListener('DOMContentLoaded', () => {
    const timeOut = setTimeout(() => open('.modal', timeOut), 500000);
@@ -29,4 +30,5 @@ window.addEventListener('DOMContentLoaded', () => {
    cards();
    email();
    catalog();
+   catalogSlider();
 });

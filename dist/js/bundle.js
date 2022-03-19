@@ -93,6 +93,20 @@ function cards() {
 
 /***/ }),
 
+/***/ "./src/js/modules/catalog-slider.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/catalog-slider.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function catalogSlider() {// $('.catalog__form').slick();
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (catalogSlider);
+
+/***/ }),
+
 /***/ "./src/js/modules/catalog.js":
 /*!***********************************!*\
   !*** ./src/js/modules/catalog.js ***!
@@ -103,21 +117,24 @@ __webpack_require__.r(__webpack_exports__);
 function catalog() {
   const showText = document.querySelector('.description__text span'),
         textInfo = document.querySelector('.description__info');
-  showText.addEventListener('click', () => {
-    textInfo.classList.toggle('js-show-text');
 
-    if (textInfo.classList.contains('js-show-text')) {
-      showText.textContent = 'скрыть';
-      showText.style.cssText = `
-         bottom: -40px;
-         `;
-    } else {
-      showText.textContent = 'читать полностью';
-      showText.style.cssText = `
-         bottom: 10px;
-         `;
-    }
-  });
+  if (showText) {
+    showText.addEventListener('click', () => {
+      textInfo.classList.toggle('js-show-text');
+
+      if (textInfo.classList.contains('js-show-text')) {
+        showText.textContent = 'скрыть';
+        showText.style.cssText = `
+            bottom: -40px;
+            `;
+      } else {
+        showText.textContent = 'читать полностью';
+        showText.style.cssText = `
+            bottom: 10px;
+            `;
+      }
+    });
+  }
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (catalog);
@@ -145,30 +162,33 @@ function email() {
     success: 'Успешно загружено',
     fail: 'Что-то пошло не так'
   };
-  postData(form);
 
-  function postData(form) {
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      showEmailModal();
-      const formData = new FormData(form);
-      const json = JSON.stringify(Object.fromEntries(formData.entries())); // formData => в массив массивов, потом обратно в объект и в json формат
+  if (form) {
+    postData(form);
 
-      (0,_services_service__WEBPACK_IMPORTED_MODULE_0__.posting)('http://localhost:3000/requests', json).then(data => {
-        spinner.remove(); // console.log(data);
+    function postData(form) {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        showEmailModal();
+        const formData = new FormData(form);
+        const json = JSON.stringify(Object.fromEntries(formData.entries())); // formData => в массив массивов, потом обратно в объект и в json формат
 
-        statusMessage.textContent = message.success;
-        form.reset();
-      }).catch(() => {
-        spinner.remove();
-        statusMessage.textContent = message.fail;
-      }).finally(() => {
-        setTimeout(() => {
-          statusMessage.remove();
-          modal.classList.add('js-hide');
-        }, 1500);
+        (0,_services_service__WEBPACK_IMPORTED_MODULE_0__.posting)('http://localhost:3000/requests', json).then(data => {
+          spinner.remove(); // console.log(data);
+
+          statusMessage.textContent = message.success;
+          form.reset();
+        }).catch(() => {
+          spinner.remove();
+          statusMessage.textContent = message.fail;
+        }).finally(() => {
+          setTimeout(() => {
+            statusMessage.remove();
+            modal.classList.add('js-hide');
+          }, 1500);
+        });
       });
-    });
+    }
   }
 
   function showEmailModal() {
@@ -589,6 +609,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
 /* harmony import */ var _modules_email__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/email */ "./src/js/modules/email.js");
 /* harmony import */ var _modules_catalog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/catalog */ "./src/js/modules/catalog.js");
+/* harmony import */ var _modules_catalog_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/catalog-slider */ "./src/js/modules/catalog-slider.js");
+
 
 
 
@@ -620,6 +642,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_cards__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_modules_email__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_modules_catalog__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_modules_catalog_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
 });
 }();
 /******/ })()

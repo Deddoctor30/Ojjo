@@ -13,22 +13,36 @@
    
    &__content {
       display: flex;
+      flex-wrap: wrap;
    }
 
    &__office {
       flex: 0 1 25%;
+      min-width: 180px;
+      @media (max-width: 754px) {
+         flex: 0 1 50%;
+      }
    }
 
    &__tel {
       flex: 0 1 25%;
+      min-width: 180px;
+      @media (max-width: 754px) {
+         flex: 0 1 50%;
+      }
    }
 
    &__email {
       flex: 0 1 25%;
+      min-width: 180px;
       a {
          display: flex;
          flex-direction: column;
          @include style(0.777rem, 150%, $font_color_dark);
+      }
+      @media (max-width: 754px) {
+         margin: 25px 0px 0px 0px;
+         flex: 0 1 50%;
       }
    }
 
@@ -55,6 +69,10 @@
 
    &__more-office {
       flex: 0 1 25%;
+      @media (max-width: 754px) {
+         margin: 25px 0px 0px 0px;
+         flex: 0 1 50%;
+      }
    }
 
    &__driver {
@@ -66,6 +84,7 @@
    }
 
    &__img {
+      padding: 0px 0px 100% 0px;
    }
 }
 

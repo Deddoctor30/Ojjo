@@ -4,6 +4,8 @@ function email() {
    const form = document.querySelector('.contacts__form'),
          modal = document.querySelector('.email-form');
 
+
+
    let statusMessage;
    let spinner;
 
@@ -14,37 +16,41 @@ function email() {
       fail: 'Что-то пошло не так'
    } 
 
-   postData(form);
+   
+   if (form) {
+      postData(form);
 
-   function postData(form) {
-      form.addEventListener('submit', event => {
-         event.preventDefault();
+      function postData(form) {
+         form.addEventListener('submit', event => {
+            event.preventDefault();
 
-         showEmailModal();
+            showEmailModal();
 
-         const formData = new FormData(form);
+            const formData = new FormData(form);
 
-         const json = JSON.stringify(Object.fromEntries(formData.entries()));          // formData => в массив массивов, потом обратно в объект и в json формат
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));          // formData => в массив массивов, потом обратно в объект и в json формат
 
-         posting('http://localhost:3000/requests', json)
-         .then(data => {
-            spinner.remove();
-            // console.log(data);
-            statusMessage.textContent = message.success;
-            form.reset();
-         })
-         .catch(() => {
-            spinner.remove();
-            statusMessage.textContent = message.fail;
-         })
-         .finally(() => {
-            setTimeout(() => {
-               statusMessage.remove();
-               modal.classList.add('js-hide');
-            }, 1500); 
-         })
-      });
+            posting('http://localhost:3000/requests', json)
+            .then(data => {
+               spinner.remove();
+               // console.log(data);
+               statusMessage.textContent = message.success;
+               form.reset();
+            })
+            .catch(() => {
+               spinner.remove();
+               statusMessage.textContent = message.fail;
+            })
+            .finally(() => {
+               setTimeout(() => {
+                  statusMessage.remove();
+                  modal.classList.add('js-hide');
+               }, 1500); 
+            })
+         });
+      }
    }
+   
 
    function showEmailModal() {
       statusMessage = document.createElement('div')

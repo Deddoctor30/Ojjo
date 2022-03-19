@@ -6,32 +6,55 @@
    &__container {
    }
 
-   // &__nav {
-   //    margin: 170px 0px 51px 0px;
-   // }
-
    &__content {
       display: flex;
       justify-content: space-between;
+      @media (max-width: 712px) {
+         flex-direction: column;
+         align-items: center;
+      }
    }
 
    &__images {
+      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
       min-height: 580px;
-      width: 540px;
+      min-width: 280px;
+      margin: 0px 50px 0px 0px;
+      @media (max-width: 712px) {
+         min-width: 100%;
+         margin: 0px 0px 20px 0px;
+      }
    }
 
    &__main-image {
       margin: 0px 0px 30px 0px;
+      padding: 0px 0px 79.6% 0px;
    }
 
    &__bottop-images {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between;  
+      flex-wrap: wrap;
       img {
          width: 160px;
          height: 120px;
+      }
+      @media (max-width:1100px) {
+         flex-direction: column;
+         align-items: center;
+         img {
+            margin: 0px 0px 5px 0px;
+         }
+      }
+      @media (max-width: 712px) {
+         img {
+            width: 50%;
+            height: 50%;
+            // width: 160px;
+            // height: 120px;
+         }
       }
    }
 
@@ -69,16 +92,21 @@
    }
 }
 .item-descr {
-   min-height: 580px;
-   width: 540px;
+   // min-height: 580px;
+   // height: 800px;
+   max-width: 540px;
+   // width: 300px;
    border: 1px solid #D6D6D6;
+   // margin: 10px;
+   padding: 10px;
    
    &__wrapper {
-      margin: 10px;
-      // padding: 10px;
+      // margin: 10px;
       border: 1px solid #D6D6D6;
       padding: 40px 30px 40px 30px;
-      min-height: 558px;
+      height: 100%;
+      // min-height: 558px;
+      // width: 100%;
    }
    
    &__title {
@@ -92,12 +120,13 @@
       display: flex;
       @include style(0.888rem, 150%, #979797);
       margin: 0px 0px 30px 0px;
+      flex-wrap: wrap;
    }
 
    &__driver {
       display: block;
       border-bottom: 1px solid #D6D6D6;
-      width: 460px;
+      width: 100%;
       height: 1px;
       margin: 0px 0px 30px 0px;
    }
@@ -129,6 +158,7 @@
 
    &__buying {
       display: flex;
+      flex-wrap: wrap;
    }
 
    &__buy {
@@ -145,26 +175,5 @@
       height: 43px;
       width: 247px;
       letter-spacing: 0.05em
-   }
-}
-
-.description {
-
-   &__text {
-   }
-
-   &__info {
-   }
-
-   &__service {
-   }
-}
-
-.service {
-
-   &__item {
-   }
-
-   &__img {
    }
 }
