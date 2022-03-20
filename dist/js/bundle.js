@@ -29,6 +29,102 @@ function burger() {
 
 /***/ }),
 
+/***/ "./src/js/modules/card-slider.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/card-slider.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function cardSlider() {
+  if (document.querySelector('.product__images')) {
+    $('.product__main-image').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      // fade: false,
+      dots: false,
+      asNavFor: '.product__bottop-images',
+      responsive: [{
+        breakpoint: 1130,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      } // {
+      //    breakpoint: 716,
+      //    settings: {
+      //    slidesToShow: 1,
+      //    slidesToScroll: 1,
+      //    dots: true
+      //    }
+      // },
+      // {
+      //    breakpoint: 544,
+      //    settings: {
+      //    slidesToShow: 2,
+      //    slidesToScroll: 2,
+      //    dots: true
+      //    }
+      // }
+      ]
+    });
+    $('.product__bottop-images').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      asNavFor: '.product__main-image',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true,
+      arrows: false,
+      responsive: [{
+        breakpoint: 1024,
+        settings: "unslick"
+      }]
+    }); // $('.product__main-image').slick({
+    //    dots: false,
+    //    infinite: true,
+    //    speed: 300,
+    //    slidesToShow: 6,
+    //    adaptiveHeight: true,
+    //    arrows: false,
+    //    responsive: [
+    // {
+    //    breakpoint: 1024,
+    //    settings: {
+    //    slidesToShow: 4,
+    //    slidesToScroll: 2,
+    //    infinite: true,
+    //    dots: true
+    //    }
+    // },
+    // {
+    //    breakpoint: 716,
+    //    settings: {
+    //    slidesToShow: 3,
+    //    slidesToScroll: 2,
+    //    dots: true
+    //    }
+    // },
+    // {
+    //    breakpoint: 544,
+    //    settings: {
+    //    slidesToShow: 2,
+    //    slidesToScroll: 2,
+    //    dots: true
+    //    }
+    // }
+    // ]
+    // });
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (cardSlider);
+
+/***/ }),
+
 /***/ "./src/js/modules/cards.js":
 /*!*********************************!*\
   !*** ./src/js/modules/cards.js ***!
@@ -39,54 +135,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/service */ "./src/js/services/service.js");
 
 
-function cards() {
-  class AddCart {
-    constructor(src, alt, parentElement) {
-      this.src = src;
-      this.alt = alt;
+function cards(paretElem) {
+  if (document.querySelector(paretElem)) {
+    class AddCart {
+      constructor(src, alt, parentElement) {
+        this.src = src;
+        this.alt = alt;
 
-      for (var _len = arguments.length, classes = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-        classes[_key - 3] = arguments[_key];
+        for (var _len = arguments.length, classes = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
+          classes[_key - 3] = arguments[_key];
+        }
+
+        this.classes = classes;
+        this.parentElement = document.querySelector(parentElement);
+        this.changeHTML();
       }
 
-      this.classes = classes;
-      this.parentElement = document.querySelector(parentElement);
-      this.changeHTML(); // this.removePrevElements();
-    }
+      changeHTML() {
+        let element = document.createElement("div");
 
-    changeHTML() {
-      let element = document.createElement("div");
+        if (this.classes.length === 0) {
+          this.class = 'social__img';
+          element.classList.add(this.class);
+        } else {
+          this.classes.forEach(className => {
+            element.classList.add(className);
+          });
+        }
 
-      if (this.classes.length === 0) {
-        this.class = 'social__img';
-        element.classList.add(this.class);
-      } else {
-        this.classes.forEach(className => {
-          element.classList.add(className);
-        });
+        element.innerHTML = `
+               <img src=${this.src} alt=${this.alt}></div>
+            `;
+        this.parentElement.after(element);
       }
 
-      element.innerHTML = `
-            <img src=${this.src} alt=${this.alt}></div>
-         `;
-      this.parentElement.after(element);
+      removePrevElements() {
+        this.parentElement.innerHTML = ``;
+      }
+
     }
 
-    removePrevElements() {
-      this.parentElement.innerHTML = ``;
-    }
-
-  }
-
-  (0,_services_service__WEBPACK_IMPORTED_MODULE_0__.getResource)("http://localhost:3000/cards").then(data => {
-    data.forEach(_ref => {
-      let {
-        src,
-        alt
-      } = _ref;
-      new AddCart(src, alt, '.social__yt-video');
+    (0,_services_service__WEBPACK_IMPORTED_MODULE_0__.getResource)("http://localhost:3000/cards").then(data => {
+      data.forEach(_ref => {
+        let {
+          src,
+          alt
+        } = _ref;
+        new AddCart(src, alt, paretElem);
+      });
     });
-  });
+  }
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (cards);
@@ -100,7 +198,40 @@ function cards() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-function catalogSlider() {// $('.catalog__form').slick();
+function catalogSlider() {
+  if (document.querySelector('.catalog__form')) {
+    $('.catalog__form').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 6,
+      adaptiveHeight: true,
+      arrows: false,
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      }, {
+        breakpoint: 716,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          dots: true
+        }
+      }, {
+        breakpoint: 544,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true
+        }
+      }]
+    });
+  }
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (catalogSlider);
@@ -407,20 +538,34 @@ function slider(_ref) {
 
     nextSlide(offset);
     move = 0;
-  }); //_____________________________
+  }); //_____________________________ Для компухтера ______________________
   // Событие нажать
 
-  wrapper.addEventListener('mousedown', swipeMove); // Функция нажать
+  wrapper.addEventListener('mousedown', swipeMove);
+  wrapper.addEventListener('touchstart', swipeMove); // Функция нажать
 
   function swipeMove(event) {
     event.preventDefault();
-    endTotal = offset;
-    start = event.clientX; // Событие move
+    endTotal = offset; // Чтобы избежать конфликта присваиваний, делаем проверку на мобилку
 
-    wrapper.addEventListener('mousemove', moveFunc); // Функция move
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      start = event.touches[0].clientX;
+    } else {
+      start = event.clientX;
+    } // Событие move
+
+
+    wrapper.addEventListener('mousemove', moveFunc);
+    wrapper.addEventListener('touchmove', moveFunc); // Функция move
 
     function moveFunc(event) {
-      move = start - event.clientX;
+      // Чтобы избежать конфликта присваиваний, делаем проверку на мобилку
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        move = start - event.touches[0].clientX;
+      } else {
+        move = start - event.clientX;
+      }
+
       offset = move + endTotal; // Проверка выравнить слайд по центру при свайпе вправо  [коэффициент 2.5 - доля от ширины слайдера, при которой произойдет выравнивание]
 
       if (move >= +width.replace(/\D/g, '') / 2.5) {
@@ -448,15 +593,21 @@ function slider(_ref) {
     } // Событие отжать
 
 
-    window.addEventListener('mouseup', () => {
-      wrapper.removeEventListener('mousemove', moveFunc); // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
+    window.addEventListener('mouseup', upFunc);
+    window.addEventListener('touchend', upFunc);
+
+    function upFunc() {
+      wrapper.removeEventListener('mousemove', moveFunc);
+      wrapper.removeEventListener('touchmove', moveFunc); // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
 
       endTotal = offset;
-    }); // Выравнить слайд по центру при свайпе вправо
+    } // Выравнить слайд по центру при свайпе вправо
+
 
     function nextSlideE() {
       // Останавливаем функцию слежения при выравнивании слайда по центру
       wrapper.removeEventListener('mousemove', moveFunc);
+      wrapper.removeEventListener('touchmove', moveFunc);
       nextSlideEV();
     } // Выравнить слайд по центру при свайпе влево
 
@@ -464,6 +615,7 @@ function slider(_ref) {
     function prevSlideE() {
       // Останавливаем функцию слежения при выравнивании слайда по центру
       wrapper.removeEventListener('mousemove', moveFunc);
+      wrapper.removeEventListener('touchmove', moveFunc);
       prevSlideEV();
     }
   } // Выравнить слайд по центру при свайпе вправо
@@ -610,6 +762,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_email__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/email */ "./src/js/modules/email.js");
 /* harmony import */ var _modules_catalog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/catalog */ "./src/js/modules/catalog.js");
 /* harmony import */ var _modules_catalog_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/catalog-slider */ "./src/js/modules/catalog-slider.js");
+/* harmony import */ var _modules_card_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/card-slider */ "./src/js/modules/card-slider.js");
+
 
 
 
@@ -639,10 +793,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   (0,_modules_login__WEBPACK_IMPORTED_MODULE_3__["default"])('.modal', '.account__login', timeOut);
-  (0,_modules_cards__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_modules_cards__WEBPACK_IMPORTED_MODULE_4__["default"])('.social__yt-video');
   (0,_modules_email__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_modules_catalog__WEBPACK_IMPORTED_MODULE_7__["default"])();
   (0,_modules_catalog_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,_modules_card_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
 });
 }();
 /******/ })()

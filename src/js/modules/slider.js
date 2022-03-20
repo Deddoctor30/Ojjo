@@ -67,26 +67,42 @@ function slider({container, cards, wrap, nextArr, prevArr}) {
 
 
 
-//_____________________________
+//_____________________________ Для компухтера ______________________
 
 
    // Событие нажать
    wrapper.addEventListener('mousedown', swipeMove);
+   wrapper.addEventListener('touchstart', swipeMove);
 
    // Функция нажать
    function swipeMove (event) {
       event.preventDefault();
       endTotal = offset;
 
-      start = event.clientX;
+      // Чтобы избежать конфликта присваиваний, делаем проверку на мобилку
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+         start = event.touches[0].clientX;
+      } else {
+         start = event.clientX;
+      }
+
+
 
       // Событие move
       wrapper.addEventListener('mousemove', moveFunc);
+      wrapper.addEventListener('touchmove', moveFunc);
 
 
       // Функция move
       function moveFunc (event) {
-         move = start - event.clientX;
+
+         // Чтобы избежать конфликта присваиваний, делаем проверку на мобилку
+         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            move = start - event.touches[0].clientX;
+         } else {
+            move = start - event.clientX;
+         }
+
          offset = move + endTotal;
          
          // Проверка выравнить слайд по центру при свайпе вправо  [коэффициент 2.5 - доля от ширины слайдера, при которой произойдет выравнивание]
@@ -113,18 +129,24 @@ function slider({container, cards, wrap, nextArr, prevArr}) {
          nextSlide(Math.abs(offset));
       }
 
+
       // Событие отжать
-      window.addEventListener('mouseup', () => {
+      window.addEventListener('mouseup', upFunc);
+      window.addEventListener('touchend', upFunc);
+
+      function upFunc() {
          wrapper.removeEventListener('mousemove', moveFunc);
+         wrapper.removeEventListener('touchmove', moveFunc);
          // Запоминаем значение мува при отпускании мыши, чтобы при следующем клике значения ++
          endTotal = offset;
-      });
-
+      }
+ 
 
       // Выравнить слайд по центру при свайпе вправо
       function nextSlideE () {
          // Останавливаем функцию слежения при выравнивании слайда по центру
          wrapper.removeEventListener('mousemove', moveFunc);
+         wrapper.removeEventListener('touchmove', moveFunc);
          nextSlideEV ();
       }  
 
@@ -132,6 +154,7 @@ function slider({container, cards, wrap, nextArr, prevArr}) {
       function prevSlideE () {
          // Останавливаем функцию слежения при выравнивании слайда по центру
          wrapper.removeEventListener('mousemove', moveFunc);
+         wrapper.removeEventListener('touchmove', moveFunc);
          prevSlideEV ();
       }
    }

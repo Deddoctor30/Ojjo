@@ -10,6 +10,7 @@ import email from './modules/email';
 import {open} from './modules/login';
 import catalog from './modules/catalog';
 import catalogSlider from './modules/catalog-slider';
+import cardSlider from './modules/card-slider';
 
 window.addEventListener('DOMContentLoaded', () => {
    const timeOut = setTimeout(() => open('.modal', timeOut), 500000);
@@ -27,8 +28,9 @@ window.addEventListener('DOMContentLoaded', () => {
       });
    }
    login('.modal', '.account__login', timeOut);
-   cards();
+   cards('.social__yt-video');
    email();
    catalog();
    catalogSlider();
+   cardSlider();
 });
