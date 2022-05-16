@@ -4,8 +4,6 @@ function email() {
    const form = document.querySelector('.contacts__form'),
          modal = document.querySelector('.email-form');
 
-
-
    let statusMessage;
    let spinner;
 
@@ -15,7 +13,6 @@ function email() {
       success: 'Успешно загружено',
       fail: 'Что-то пошло не так'
    } 
-
    
    if (form) {
       postData(form);
