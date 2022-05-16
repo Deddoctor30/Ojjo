@@ -1,0 +1,152 @@
+.map {
+
+   &__container {
+   }
+   
+   &__title {
+      text-align: center;
+      text-transform: uppercase;
+      @include style(1.333rem, 150%, $font_color_dark);
+      margin: 0px 0px 40px 0px;
+      font-weight: 500;
+   }
+   
+   &__content {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   &__office {
+      flex: 0 1 25%;
+      min-width: 180px;
+      @media (max-width: 754px) {
+         flex: 0 1 50%;
+      }
+   }
+
+   &__tel {
+      flex: 0 1 25%;
+      min-width: 180px;
+      @media (max-width: 754px) {
+         flex: 0 1 50%;
+      }
+   }
+
+   &__email {
+      flex: 0 1 25%;
+      min-width: 180px;
+      a {
+         display: flex;
+         flex-direction: column;
+         @include style(0.777rem, 150%, $font_color_dark);
+      }
+      @media (max-width: 754px) {
+         margin: 25px 0px 0px 0px;
+         flex: 0 1 50%;
+      }
+   }
+
+   &__email-title {
+      @include style(1rem, 140%, $font_color_dark);
+      font-weight: 600;
+      margin: 0px 0px 25px 0px;
+   }
+
+   &__email-stack {
+      margin: 0px 0px 0px 25px;
+      position: relative;
+      &::before {
+         content: "";
+         background-image: url(/src/img/map/mail.svg);
+         background-repeat: no-repeat;
+         position: absolute;
+         height: 12px;
+         width: 16px;
+         top: 4px;
+         left: -25px;
+      }
+   }
+
+   &__more-office {
+      flex: 0 1 25%;
+      @media (max-width: 754px) {
+         margin: 25px 0px 0px 0px;
+         flex: 0 1 50%;
+      }
+   }
+
+   &__driver {
+      margin: 60px 0px 60px 0px;
+      display: block;
+      border-bottom: 1px solid #D6D6D6;
+      width: 100%;
+      height: 1px;
+   }
+
+   &__img {
+      padding: 0px 0px 100% 0px;
+   }
+}
+
+.office {
+
+   &__title {
+      @include style(1rem, 140%, $font_color_dark);
+      font-weight: 600;
+      margin: 0px 0px 25px 0px;
+   }
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      @include style(0.777rem, 150%, $font_color_dark);
+      margin: 0px 0px 0px 25px;
+      position: relative;
+      &::before {
+         content: "";
+         background-image: url(/src/img/map/office.svg);
+         background-repeat: no-repeat;
+         position: absolute;
+         // background-size: 20px;
+         height: 20px;
+         width: 14px;
+         top: 2px;
+         left: -25px;
+      }
+   }
+}
+.tel {
+   &__title {
+      @include style(1rem, 140%, $font_color_dark);
+      font-weight: 600;
+      margin: 0px 0px 25px 0px;
+   }
+
+   &__list {
+      @include style(0.777rem, 150%, $font_color_dark);
+      display: flex;
+      flex-direction: column;
+      margin: 0px 0px 0px 25px;
+      position: relative;
+      &::before {
+         content: "";
+         background-image: url(/src/img/map/phone.svg);
+         background-repeat: no-repeat;
+         position: absolute;
+         // background-size: 20px;
+         height: 17px;
+         width: 17px;
+         top: 2px;
+         left: -25px;
+      }
+   }
+}
+.more-office {
+   display: flex;
+   flex-direction: column;
+   &__title {
+      @include style(1rem, 140%, $font_color_dark);
+      font-weight: 600;
+      margin: 0px 0px 25px 0px;
+   }
+}

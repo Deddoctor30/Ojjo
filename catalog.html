@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="img/favicon/favicon.ico">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title>Ojjo</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__line"></div>
+         
+         <div class="header__logo logo">
+            <a href="./index.html" class="logo__img">
+               <img src="img/header/header__logo.png" alt="logo">
+            </a>
+         </div>
+
+         <div class="header__container container">
+            
+            <div class="header__inner">
+               <nav class="header__menu menu">
+                  <ul class="menu__list">
+                     <li class="menu__item">
+                        <a href="#" class="menu__link">Контрагентам</a>
+                     </li>
+                     <li class="menu__item">
+                        <a href="#" class="menu__link">Дизайнерам</a>
+                     </li>
+                     <li class="menu__item">
+                        <a href="#" class="menu__link">Вакансии</a>
+                     </li>
+                  </ul>
+               </nav>
+            
+               <div class="header__burger burger">
+                  <span></span>
+               </div>
+
+               <div class="header__right-bar right-bar">
+                  <div class="header__search search">
+                     <div class="search__inner">
+                        <form tabindex="1" action="#" method="get" enctype="multipart/form-data">
+                           <button type="submit"></button>
+                           <input name="search" type="text" placeholder="Поиск">
+                        </form>
+                     </div>
+                  </div>
+            
+                  <div class="header__account account">
+                     <div class="account__inner">
+                        <div class="account__login">Вход/Регистрация</div>
+                        <div class="account__block">
+                           <div class="account__logo">
+                              <a href="#"><img src="img/header/header__account-logo.svg" alt="avatar"></a>
+                           </div>
+                           <div class="account__like">
+                              <a href="#"><img src="img/header/header__accoung-like.svg" alt="like"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+            
+
+               </div>
+            </div>
+
+         </div>
+      </header>
+
+      <section class="catalog">
+         <div class="catalog__wrapper">
+            <div class="catalog__container container">
+               <div class="catalog__filter">
+                  <form class="catalog__form" action="#" method="get" enctype="multipart/form-data">
+                     <select name="brand" id="brand">
+                        <option value="default">Бренд</option>
+                        <option value="dg">Dolce & Gabanna</option>
+                        <option value="dg">Dolce & Gabanna</option>
+                        <option value="dg">Dolce & Gabanna</option>
+                        <option value="dg">Dolce & Gabanna</option>
+                        <option value="dg">Dolce & Gabanna</option>
+                     </select>
+                     <select name="price" id="price">
+                        <option value="default">Цена</option>
+                        <option value="dg">до 100 000</option>
+                        <option value="dg">от 100 000</option>
+                     </select>
+                     <select name="for" id="for">
+                        <option value="default">Для кого</option>
+                        <option value="dg">Для женщины</option>
+                        <option value="dg">Для мужчины</option>
+                     </select>
+                     <select name="collection" id="collection">
+                        <option value="default">Коллекция</option>
+                        <option value="dg">Авторские работы</option>
+                        <option value="dg">Популярное</option>
+                     </select>
+                     <select name="season" id="season">
+                        <option value="default">Сезон</option>
+                        <option value="dg">Весеннее настроение</option>
+                        <option value="dg">Летняя прогулка</option>
+                     </select>
+                     <select name="event" id="event">
+                        <option value="default">Событие</option>
+                        <option value="dg">Свадьба</option>
+                        <option value="dg">Юбилей</option>
+                        <option value="dg">Подарок любимой</option>
+                     </select>
+                  </form>
+               </div>
+               <div class="catalog__content">
+                  <div class="catalog__cards">
+                     <div class="catalog__card card">
+                        <div class="card__img img-adaptiv"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
+                        <div class="card__type">Подвеска</div>
+                        <div class="card__name">Dolce & Gabanna</div>
+                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+                     </div>
+                     <div class="catalog__card card">
+                        <div class="card__img img-adaptiv"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
+                        <div class="card__type">Подвеска</div>
+                        <div class="card__name">Dolce & Gabanna</div>
+                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+                     </div>
+                     <div class="catalog__card card">
+                        <div class="card__img img-adaptiv"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
+                        <div class="card__type">Подвеска</div>
+                        <div class="card__name">Dolce & Gabanna</div>
+                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+                     </div>
+                     <span class="catalog__line"></span>
+                     <div class="catalog__card card">
+                        <div class="card__img img-adaptiv"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
+                        <div class="card__type">Подвеска</div>
+                        <div class="card__name">Dolce & Gabanna</div>
+                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+                     </div>
+                     <div class="catalog__card card">
+                        <div class="card__img img-adaptiv"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
+                        <div class="card__type">Подвеска</div>
+                        <div class="card__name">Dolce & Gabanna</div>
+                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+                     </div>
+                     <div class="catalog__card card">
+                        <div class="card__img img-adaptiv"><img src="./img/catalog/catalog.jpg" alt="rings"></div>
+                        <div class="card__type">Подвеска</div>
+                        <div class="card__name">Dolce & Gabanna</div>
+                        <div class="card__price btn btn_dark"><a href="./card.html">175 000 ₽</a></div>
+                     </div>
+                  </div>
+                  <div class="catalog__show-more btn btn_dark">Покажите еще</div>
+               </div>
+               <div class="catalog__description description">
+                  <div class="description__text">
+                     <div class="description__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente dolorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente doloremLorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptas minima animi corporis quaerat tempore adipisci consequuntur, iure, ut atque vel eligendi recusandae in commodi omnis itaque voluptates sapiente dolorem</div>
+                  <span>читать полностью</span>
+                  </div>
+                  <div class="description__service service">
+                     <div class="service__item">
+                        <div class="service__img"><img src="./img/catalog/service_1.png" alt="service1"></div>
+                        <p>Бесплатная доставка</p>
+                     </div>
+                     <div class="service__item">
+                        <div class="service__img"><img src="./img/catalog/service_2.png" alt="service2"></div>
+                        <p>Индивидуальный дизайн</p>
+                     </div>
+                     <div class="service__item">
+                        <div class="service__img"><img src="./img/catalog/service_3.png" alt="service3"></div>
+                        <p>Бесплатная примерка</p>
+                     </div>
+                     <div class="service__item">
+                        <div class="service__img"><img src="./img/catalog/service_4.png" alt="service4"></div>
+                        <p>Личный подход</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="contacts">
+         <div class="contacts__inner">
+            <div class="contacts__subtitle">Полезные советы и персональный предложения</div>
+            <div class="contacts__title">Эксклюзивная рассылка</div>
+            <div class="contacts__input">
+               <div class="contacts__personal">
+                  <div class="contacts__link">Доставка и оформление</div>
+                  <div class="contacts__link">Индивидуальный дизайн</div>
+                  <div class="contacts__link">Личный менеджер</div>
+               </div>
+               <div class="contacts__wrapper">
+                  <div class="contacts__email">
+                     <form class="contacts__form" action="#" method="get" enctype="multipart/form-data">
+                        <input required tabindex="1" type="text" name="email" placeholder="ваш e-mail">
+                        <button type="submit" tabindex="2">отправить</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <footer class="footer">
+         <div class="footer__container container">
+            <div class="footer__inner">
+               <div class="footer__top">
+                  <div class="footer__link link">
+                     <div class="link__title title">полезные ссылки</div>
+                     <div class="link__item item text__sibtitle--hover"><a href="#">Доставка</a></div>
+                     <div class="link__item item text__sibtitle--hover"><a href="#">Оплата</a></div>
+                     <div class="link__item item text__sibtitle--hover"><a href="#">Акции</a></div>
+                     <div class="link__item item text__sibtitle--hover"><a href="#">Политика конфиденциальности</a></div>
+                  </div>
+                  <div class="footer__pay pay">
+                     <div class="pay__title title">оплата</div>
+                     <div class="pay__text item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</div>
+                     <div class="pay__icons">
+                        <a href="#"><img src="img/footer/footer__visacard.png" alt=""></a>
+                        <a href="#"><img src="img/footer/footer__mastercad.png" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="footer__contactus contactus">
+                     <div class="contactus__title-2 title">контакты</div>
+                     <div class="contactus__tel text__sibtitle--hover">
+                        <a href="tel: 88122345655">8 (812) 234-56-55</a>
+                        <a href="tel: 88122345655">8 (812) 234-56-55</a>
+                     </div>
+                     <div class="contactus__mail text__sibtitle--hover">
+                        <a href="mailto:ojjo@ojjo.ru">ojjo@ojjo.ru</a>
+                     </div>
+                  </div>
+                  <div class="footer__media media">
+                     <div class="media__title title">социальные сети</div>
+                     <div class="media__text item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</div>
+                     <div class="media__inner">
+                        <a href="#"><span class="fa fa-camera-retro"></span></a>
+                        <a href="#">
+                           <div class="media__vk"></div>
+                        </a>
+                        <a href="#">
+                           <div class="media__facebook"></div>
+                        </a>
+                        <a href="#">
+                           <div class="media__telegram"></div>
+                        </a>
+                        <a href="#">
+                           <div class="media__e"></div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="footer__bottom bottom">
+                  <div class="bottom__text item text__sibtitle--hover"><a href="#">(c) 2020 OJJO jewelry</a></div>
+                  <div class="bottom__text item text__sibtitle--hover"><a href="#">Договор публичной офферты</a></div>
+                  <div class="bottom__text item text__sibtitle--hover"><a href="#">Контрагентам</a></div>
+                  <div class="bottom__text item text__sibtitle--hover"><a href="#">Сделано Figma.info</a></div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <div class="modal js-hide">
+         <div class="modal__dialog">
+             <div class="modal__content">
+                 <form action="#">
+                     <div data-close class="modal__close">&times;</div>
+                     <div class="modal__title">Вход в <span>Ojjo</span></div>
+                     <input required placeholder="Почта" name="name" type="text" class="modal__input">
+                     <input required placeholder="Пароль" name="phone" type="phone" class="modal__input">
+                     <button class="btn btn_dark">Войти</button>
+                     <div class="modal__login">Нет учетной записи? <a href="#">Зарегистрируйтесь</a></div>
+                 </form>
+             </div>
+         </div>
+      </div>
+
+      <div class="email-form modal js-hide">
+         <div class="modal__dialog email-form__dialog">
+             <div class="email-form__content modal__content">
+             </div>
+         </div>
+      </div>
+      
+   </div>
+   <script src="./libs/jquerry/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" href="libs/slick/slick.css">
+   <link rel="stylesheet" href="libs/slick/slick-theme.css">
+   <script src="./libs/slick/slick.min.js"></script>
+   <script src="../dist/js/bundle.js"></script>
+</body>
+</html>

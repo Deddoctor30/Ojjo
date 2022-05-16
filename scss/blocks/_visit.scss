@@ -1,0 +1,46 @@
+.visitus {
+   // min-height: 541px;
+   height: 100%;
+   background: url(../img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
+   @media(max-width:768px){
+   }
+   &__inner {
+   }
+
+   &__subtitle {
+      @include style(1.16rem, 140%, $font_color_light);
+      text-align: center;
+      padding: 100px 20px 0px 20px;
+      @media(max-width:768px){
+         padding: 50px 20px 0px 20px;
+      }
+   }
+
+   &__title {
+      @include style(1.66rem, 140%, $font_color_light);
+      text-align: center;
+      font-weight: bold;
+      padding: 15px 20px 0px 20px;
+   }
+
+   &__text {
+      @include style(1rem, 140%, $font_color_light);
+      margin: 0 auto;
+      text-align: center;
+      padding: 45px 20px 0px 20px;
+      max-width: 730px;
+      margin-bottom: 50px;
+   }  
+
+   &__button {
+      margin: 0 auto;
+      text-transform: uppercase;
+      margin-bottom: 100px;
+      a {
+         padding: 20px 72px;
+      }
+      @media(max-width:768px){
+         margin-bottom: 50px;
+      }
+   }
+}
