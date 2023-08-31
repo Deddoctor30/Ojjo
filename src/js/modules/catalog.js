@@ -2,7 +2,6 @@ function catalog() {
    const showText = document.querySelector('.description__text span'),
          textInfo = document.querySelector('.description__info');
 
-
    if (showText) {
       showText.addEventListener('click', () => {
          textInfo.classList.toggle('js-show-text');

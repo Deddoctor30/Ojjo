@@ -18,8 +18,6 @@ function modal(modal, trigger, timeOut) {
          modalOpen = document.querySelector(trigger);
 
    modalOpen.addEventListener('click', () => open(modal, timeOut));
-
-   // Закрытие окна на Escape
    document.addEventListener('keyup', (event) => {
       if (event.code === 'Escape' && modalWindow.classList.contains('show')) {
          close(modal);

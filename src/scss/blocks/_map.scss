@@ -1,8 +1,4 @@
 .map {
-
-   &__container {
-   }
-   
    &__title {
       text-align: center;
       text-transform: uppercase;
@@ -10,12 +6,10 @@
       margin: 0px 0px 40px 0px;
       font-weight: 500;
    }
-   
    &__content {
       display: flex;
       flex-wrap: wrap;
    }
-
    &__office {
       flex: 0 1 25%;
       min-width: 180px;
@@ -23,7 +17,6 @@
          flex: 0 1 50%;
       }
    }
-
    &__tel {
       flex: 0 1 25%;
       min-width: 180px;
@@ -31,7 +24,6 @@
          flex: 0 1 50%;
       }
    }
-
    &__email {
       flex: 0 1 25%;
       min-width: 180px;
@@ -45,13 +37,11 @@
          flex: 0 1 50%;
       }
    }
-
    &__email-title {
       @include style(1rem, 140%, $font_color_dark);
       font-weight: 600;
       margin: 0px 0px 25px 0px;
    }
-
    &__email-stack {
       margin: 0px 0px 0px 25px;
       position: relative;
@@ -66,7 +56,6 @@
          left: -25px;
       }
    }
-
    &__more-office {
       flex: 0 1 25%;
       @media (max-width: 754px) {
@@ -74,7 +63,6 @@
          flex: 0 1 50%;
       }
    }
-
    &__driver {
       margin: 60px 0px 60px 0px;
       display: block;
@@ -82,20 +70,16 @@
       width: 100%;
       height: 1px;
    }
-
    &__img {
       padding: 0px 0px 100% 0px;
    }
 }
-
 .office {
-
    &__title {
       @include style(1rem, 140%, $font_color_dark);
       font-weight: 600;
       margin: 0px 0px 25px 0px;
    }
-
    &__list {
       display: flex;
       flex-direction: column;
@@ -121,7 +105,6 @@
       font-weight: 600;
       margin: 0px 0px 25px 0px;
    }
-
    &__list {
       @include style(0.777rem, 150%, $font_color_dark);
       display: flex;

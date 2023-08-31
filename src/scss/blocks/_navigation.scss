@@ -1,5 +1,4 @@
 .navigation {
-
    &__nav {
       margin: 170px 0px 51px 0px;
    }
@@ -16,15 +15,12 @@
    }
    &__link {
       a {
-         // text-decoration: underline;
          border-bottom: 1px solid #000000;
       }
       span {
-         // text-decoration: underline;
          border-bottom: 1px solid #000000;
       }
    }
-
    &__current {
       color: #1d9bf0;
    }

@@ -1,9 +1,6 @@
 .main {
    min-height: 950px;
    position: relative;
-   &__container {
-   }
-
    &__inner {
       display: flex;
       flex-direction: column;
@@ -13,12 +10,10 @@
          margin: -420px 0px 0px 0px;
       }
    }
-   
    &__bg {
       padding: 950px 0px 0px 0px;
       z-index: 1;
    }
-
    &__content {
       display: flex;
       flex-direction: column;
@@ -26,7 +21,6 @@
       margin: 0px 0px 80px 0px;
       z-index: 5;
    }
-
    &__title {
       @include style(2rem, 140%, $font_color_light);
       font-weight: 700;
@@ -34,7 +28,6 @@
       text-align: center;
       margin: 0px 0px 50px 0px;
    }
-
    &__button {
       a {
          padding: 20px 50px;
@@ -44,9 +37,6 @@
       }
       text-transform: uppercase;
    }
-
-   &__partners {
-   }
 }
 .partners {
    z-index: 5;
@@ -55,21 +45,15 @@
    @media (max-width:522px){
       display: none;
    }
-
-   &__row {
-   }
-
    &__colimns {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
    }
-
    &__item {
       width: 160px;
       height: 60px;
       position: relative;
-
       img {
          width: 100%;
          height: 100%;

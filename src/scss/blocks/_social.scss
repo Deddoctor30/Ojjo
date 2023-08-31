@@ -1,19 +1,9 @@
 .social {
    margin: 0px 0px 150px 0px;
-   &__container {
-   }
-
-   &__inner {
-   }
-
-   &__text {
-   }
-
    &__media {
       display: flex;
       flex-wrap: wrap;
    }
-
    &__yt-video {
       flex: 0 1 50%;
       position: relative;
@@ -31,7 +21,6 @@
          padding: 0px 0px 65% 0px;
       }
    }
-
    &__img {
       flex: 0 1 25%;
       position: relative;
@@ -51,8 +40,6 @@
 
       }
    }
-
-
    &__item {
       flex: 0 1 50%;
       position: relative;

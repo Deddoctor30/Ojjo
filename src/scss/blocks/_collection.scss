@@ -1,18 +1,10 @@
 .collection {
-   &__container {
-   }
-
-   &__inner {
-   }
-
    &__text {
       margin: 100px 0px 0px 0px;
    }
-
    &__slider {
       margin: 0px 0px 55px 0px;
    }
-
    &__goods {
       margin: 0px 0px 120px 0px;
       @media (max-width:800px){
@@ -20,15 +12,12 @@
       }
    }
 }
-
-
 .text {
    &__subtitle {
       @include style(1.166rem, 140%, $font_color_dark);
       text-align: center;
       margin: 0px 0px 15px 0px;
    }
-
    &__title {
       @include style(1.666rem, 140%, $font_color_dark);
       text-align: center;
@@ -37,19 +26,13 @@
       margin: 0px 0px 60px 0px;
    }
 }
-
-
-
-
 .slider {
-
    &__list {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
 
    }
-
    &__item {
       @include style(1rem, 340%, $font_color_dark);
       flex: 1 1 auto;
@@ -71,28 +54,20 @@
       }
    }
 }
-
-
 .js-hover-goods {
    background-color: $button_color_dark;
    color: $font_color_light;
    box-shadow: none;
    height: 61px;
    margin-bottom: -6px;
-   // &:hover{
-   //    margin-bottom: 0;
-   // }
 }
-
 .goods {
-
    &__items {
       display: flex;
       flex-wrap: wrap;
       margin: 0px 0px -20px -20px;
       justify-content: center;
    }
-
    &__item {
       position: relative;
       transform: scale(1, 1);
@@ -106,7 +81,6 @@
          height: 300px;
       }
    }
-
    &__label {
       @include style(1.333rem, 116%, $font_color_light);
       position: absolute;
@@ -117,7 +91,6 @@
       text-transform: uppercase;
       transform: translate(-45%, 0px);
    }
-
    &__img {
       width: 100%;
       height: 100%;
@@ -131,7 +104,6 @@
       }
    }
 }
-
 .js-hide-goods {
    transition: all 1s ease;
    transform: scale(0.8, 0.8);

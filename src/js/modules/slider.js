@@ -1,42 +1,31 @@
-// import cards from "./cards"
-
 function slider({container, cards, wrap, nextArr, prevArr}) {
    function nextSlide (value) {
       slideField.style.transform = `translateX(-${value}px)`
    }
 
-   // Переменные
-      // Слайдер - каруселька
-         const items = document.querySelectorAll(cards),
-               wrapper = document.querySelector(wrap),
-               slideField = document.querySelector(container),
-               width = window.getComputedStyle(wrapper).width,
-               arrowNext = document.querySelector(nextArr),
-               arrowPrev = document.querySelector(prevArr);
+   const items = document.querySelectorAll(cards),
+         wrapper = document.querySelector(wrap),
+         slideField = document.querySelector(container),
+         width = window.getComputedStyle(wrapper).width,
+         arrowNext = document.querySelector(nextArr),
+         arrowPrev = document.querySelector(prevArr);
 
-
-      // Тач слайдер
-         let start = 0,
-             move = 0,
-             offset = 0,
-             endTotal = 0,
-             n = 1;
-         
+   let start = 0,
+         move = 0,
+         offset = 0,
+         endTotal = 0,
+         n = 1;
 
    slideField.style.width = 100 * items.length + '%';
-
    items.forEach(item => {
       item.style.width = width;
    });
-   
 
-   // Слайд вперед по клику стрелки
    arrowNext.addEventListener('click', () => {
       offset += +width.replace(/\D/g, '') - move;         
       if (offset >= +width.replace(/\D/g, '') * (items.length)) {
          offset = 0;
       }
-
       if (n === items.length) {
          n = 1;
       } else {

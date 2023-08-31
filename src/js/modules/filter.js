@@ -4,7 +4,6 @@ function filter(trigger, cardsItems) {
 
    filtrTrigger.forEach((element) => {
       element.addEventListener('click', event => {
-
          if (element.classList.contains('js-hover-goods')) {
             deleteCards();
          } else {
@@ -20,11 +19,9 @@ function filter(trigger, cardsItems) {
    });
 
    function deleteCards() {
-      // удаляю выделения с триггера
       filtrTrigger.forEach(item => {
          item.classList.remove('js-hover-goods');
       });
-      // удаляю старые карточки
       cards.forEach(item => {
          item.classList.remove('js-hide-goods')
       });

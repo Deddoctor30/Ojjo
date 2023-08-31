@@ -1,22 +1,12 @@
 .product {
-
-   &__wrapper {
-   }
-
-   &__container {
-   }
-
    &__content {
       display: flex;
       justify-content: space-between;
       min-width: 0;
       @media (max-width: 768px) {
          flex-direction: column;
-         // align-items: center;
-
       }
    }
-
    &__images {
       flex: 1 1 auto;
       display: flex;
@@ -35,16 +25,10 @@
          margin: 0 auto;
       }
    }
-
    &__main-image {
       margin: 0px 0px 30px 0px;
-      // padding: 0px 0px 79.6% 0px;
       text-align: center;
    }
-//    .slick-slide:not(:last-child) {
-//       margin: 0px 20px 0px 0px;
-//   }
-
    &__bottop-images {
       display: flex;
       justify-content: space-between;  
@@ -55,33 +39,17 @@
       }
       @media (max-width:1130px) {
          display: none;
-         // flex-direction: column;
-         // align-items: center;
-         // img {
-         //    margin: 0px 0px 5px 0px;
-         // }
       }
-      // @media (max-width: 712px) {
-      //    img {
-      //       width: 50%;
-      //       height: 50%;
-      //       // width: 160px;
-      //       // height: 120px;
-      //    }
-      // }
    }
-
    &__item-desc {
       @media (max-width: 768px) {
          margin: 50px 0px 0px 0px;
       }
    }
-
    &__description {
       margin: 0px 0px 150px 0px;
    }
 }
-
 .nav {
    text-align: center;
    @include style(0.888rem, 175%, $font_color_dark);
@@ -94,47 +62,34 @@
    }
    &__link {
       a {
-         // text-decoration: underline;
          border-bottom: 1px solid #000000;
       }
       span {
-         // text-decoration: underline;
          border-bottom: 1px solid #000000;
       }
    }
-
    &__current {
       color: #1d9bf0;
    }
 }
 .item-descr {
-   // min-height: 580px;
-   // height: 800px;
    max-width: 540px;
-   // width: 300px;
    border: 1px solid #D6D6D6;
-   // margin: 10px;
    padding: 10px;
    @media (max-width: 768px) {
       max-width: 100%;
    }
-   
    &__wrapper {
-      // margin: 10px;
       border: 1px solid #D6D6D6;
       padding: 40px 30px 40px 30px;
       height: 100%;
-      // min-height: 558px;
-      // width: 100%;
    }
-   
    &__title {
       @include style(1.333rem, 150%, $font_color_dark);
       text-transform: uppercase;
       margin: 0px 0px 30px 0px;
       font-weight: 500;
    }
-
    &__info {
       display: flex;
       @include style(0.888rem, 150%, #979797);
@@ -142,7 +97,6 @@
       flex-wrap: wrap;
       width: 100%;
    }
-
    &__driver {
       display: block;
       border-bottom: 1px solid #D6D6D6;
@@ -150,7 +104,6 @@
       height: 1px;
       margin: 0px 0px 30px 0px;
    }
-
    &__category {
       display: flex;
       margin: 0px 25px 0px 0px;
@@ -158,29 +111,24 @@
          margin: 0px 15px 0px 0px;
       }
    }
-
    &__brand {
       display: flex;
       p {
          margin: 0px 15px 0px 0px;
       }
    }
-
    &__descr {
       margin: 0px 0px 30px 0px;
    }
-
    &__price {
       @include style(1.333rem, 120%, $font_color_dark);
       font-weight: 500;
       margin: 0px 0px 30px 0px;
    }
-
    &__buying {
       display: flex;
       flex-wrap: wrap;
    }
-
    &__buy {
       margin: 0px 30px 30px 0px;
       @include style(1rem, 150%, $button_color_light);
@@ -188,7 +136,6 @@
       height: 41px;
       width: 110px;
    }
-
    &__shop {
       @include style(1rem, 150%, $button_color_dark);
       text-transform: uppercase;
@@ -197,7 +144,6 @@
       letter-spacing: 0.05em
    }
 }
-
 .description {
    @media (max-width:768px) {
       &__text {

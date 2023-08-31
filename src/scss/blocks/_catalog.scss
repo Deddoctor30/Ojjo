@@ -1,15 +1,5 @@
 .catalog {
    margin: 210px 0px 0px 0px;
-   // background-color: pink;
-   &__wrapper {
-   }
-
-   &__container {
-   }
-
-   &__filter {
-   }
-
    &__form {
       display: flex;
       justify-content: space-between;
@@ -23,26 +13,16 @@
          @include style(0.888rem, 150%, $font_color_dark);
       }
    }
-
-   &__content {
-   }
-
    &__cards {
       display: flex;
       flex-wrap: wrap;
       position: relative;
-      // height: 1500px;
    }
-
-   &__card {
-   }
-
    &__line {
       &::before{
          content: "";
          position: absolute;
          top: 48.74%;
-         // top: 580px;
          left: 0px;
          display: inline-block;
          width: 100%;
@@ -56,8 +36,6 @@
          }
       }
    }
-   
-
    &__show-more {
       margin: 0 auto;
       width: 221px;
@@ -67,12 +45,10 @@
          margin-top: 50px;
       }
    }
-
    &__description {
       margin: 0px 0px 150px 0px;
    } 
 }
-
 .description {
    display: flex;
    @media (max-width: 768px) {
@@ -85,7 +61,6 @@
       position: relative;
       margin: 150px 103px 0px 0px;
       height: 100%;
-      // height: 100px;
       span {
          text-transform: uppercase;
          border-bottom: 1px dashed;
@@ -119,12 +94,10 @@
          background: linear-gradient(180deg, rgba(255,255,255,0.23853291316526615) 30%, rgba(255,255,255,1) 80%);
       }
    }
-
    &__service {
       margin: 150px 0px 0px 0px;
    }
 }
-
 .js-show-text {
    height: 100%;
    &::after {
@@ -132,7 +105,6 @@
       background: none
    }
 }
-
 .card {
    flex: 0 1 33.333%;
    margin: 95px 0px 60px 0px;
@@ -151,20 +123,17 @@
       padding: 0px 0px 78.5% 0px;
       text-align: center;
    }
-
    &__type {
       margin: 25px 0px 0px 0px;
       text-align: center;
       @include style(0.888rem, 150%, $font_color_dark);
    }
-
    &__name {
       margin: 10px 0px 15px 0px;
       text-align: center;
       @include style(1.333rem, 140%, $font_color_dark);
       font-weight: 600;
    }
-
    &__price {
       text-align: center;
       margin: 0 auto;
@@ -175,11 +144,9 @@
          padding: 8px 14px;
       }
    }
-
 }
 .service {
    display: flex;
-   // justify-content: center;
    align-self: flex-start;
    max-width: 277px;
    flex-wrap: wrap;
@@ -206,22 +173,15 @@
       margin: 0px 0px 15px 0px;
    }
 }
-
 .your-class {
    margin: 50px 50px;
-   // display: flex;
    &>*{
       margin: 0px 50px 0px 0px;
    }
-
 }
 
 .img {
    display: block;
    width: 100px;
    height: 110px;
-   img {
-      // width: 100%;
-      // height: 100%;
-   }
 }

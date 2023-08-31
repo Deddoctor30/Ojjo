@@ -1,10 +1,8 @@
 const getResource = async (url) => {
    const res = await fetch(url);
-
    if (!res.ok) {
       throw new Error(`Could not fetch ${url}, statys: ${res.status}`);
    }
-
    return await res.json();                                                            // res.json() - метод у fetch'a который json формат переводит в обычный объект для юзания на сайте
 }
 

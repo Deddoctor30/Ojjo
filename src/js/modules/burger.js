@@ -5,7 +5,6 @@ function burger() {
          bar = document.querySelector('.header__right-bar'),
          burgerTrigger = document.querySelector('.burger');
 
-
    burgerTrigger.addEventListener('click', () => {
       inner.classList.toggle('menu-burger');
       line.classList.toggle('line-wide');

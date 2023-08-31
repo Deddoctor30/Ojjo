@@ -1,0 +1,7 @@
+@import './variables.scss';
+
+@mixin style($fz, $lh, $c) {
+   font-size: $fz;
+   line-height: $lh;
+   color: $c;
+}

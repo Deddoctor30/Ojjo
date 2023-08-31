@@ -31,13 +31,10 @@
        border: none;
        background-color: transparent;
        cursor: pointer;
-       //    font-weight: 700;
-       //    opacity: .5;
    }
    &__title {
        text-align: center;
        font-size: 22px;
-    //    text-transform: uppercase;
        margin-bottom: 50px;
        letter-spacing: 2px;
        span {
@@ -74,22 +71,18 @@
         }
     }
 }
-
 .js-show {
     display: block;
  }
- 
  .js-hide {
     display: none;
  }
-
  .email-form {
     background-color: none;
     &__dialog{
         margin: 45vh auto;
         display: flex;
     }
-
     &__content{
         justify-content: center;
         display: flex;

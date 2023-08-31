@@ -3,7 +3,6 @@ import {posting} from '../services/service';
 function email() {
    const form = document.querySelector('.contacts__form'),
          modal = document.querySelector('.email-form');
-
    let statusMessage;
    let spinner;
 
@@ -16,21 +15,15 @@ function email() {
    
    if (form) {
       postData(form);
-
       function postData(form) {
          form.addEventListener('submit', event => {
             event.preventDefault();
-
             showEmailModal();
-
             const formData = new FormData(form);
-
-            const json = JSON.stringify(Object.fromEntries(formData.entries()));          // formData => в массив массивов, потом обратно в объект и в json формат
-
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
             posting('http://localhost:3000/requests', json)
             .then(data => {
                spinner.remove();
-               // console.log(data);
                statusMessage.textContent = message.success;
                form.reset();
             })
@@ -47,7 +40,6 @@ function email() {
          });
       }
    }
-   
 
    function showEmailModal() {
       statusMessage = document.createElement('div')
@@ -64,10 +56,8 @@ function email() {
          height: 30px;
       `;
       spinner.src = message.spinner;
-
       document.querySelector('.email-form__content').append(statusMessage);
       document.querySelector('.email-form__content').append(spinner);
-
       modal.classList.remove('js-hide');
    }
 }

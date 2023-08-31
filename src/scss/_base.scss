@@ -1,38 +1,10 @@
-// _________________________________Шрифты____________________________________
-@import url(../fonts/gilroy/regular/style.css);
-@import url(../fonts/gilroy/medium/style.css);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
-// ___________________________________________________________________________
-
-
-// _____________________Remebers_____________________
-/*
-   &>*:not(:last-child){
-      margin: 0px 0px 50px 0px;
-   }
-
-   line-height: calc(([размер интервала]/[размер шрифта])*100%);
-
-   Javascript
-   Чтобы избежать конфликта присваиваний, делаем проверку на мобилку
-   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      код для телефона
-   } else {
-      код для десктопа
-   }
-*/
-
-// _________________________________Переходы____________________________________
-
+@import './fonts.scss';
+@import './mixins.scss';
+@import './variables.scss';
 
 * {
    transition: 0.3s all ease 0s;
 }
-
-
-// ____________________________Дефолтные настройки______________________________
-
-
 html, body {
    font-family: gilroy;
 	font-size: 18px;
@@ -40,11 +12,6 @@ html, body {
    font-weight: 400;
 	color: black;
 }
-
-
-// ____________________________Дефолтные элементы______________________________
-
-
 .img-adaptiv {
    position: relative;
    img {
@@ -57,30 +24,6 @@ html, body {
       object-position: center;
    }
 }
-
-
-// _____________________________SCSS переменные________________________________
-
-
-
-@mixin style($fz, $lh, $c) {
-   font-size: $fz;
-   line-height: $lh;
-   color: $c;
-}
-
-$font_color_light: #FFFFFF;
-$font_color_dark: #333333;
-$button_color_light: #FFFFFF;
-$button_color_dark: #333333;
-$header_line_color: #333333df;
-$modal_bg_color: #FFFFFF;
-
-
-
-// ____________________________Подчеркивание ссылки______________________________
-
-
 .text {
    &__sibtitle--hover {
       a {
@@ -90,33 +33,20 @@ $modal_bg_color: #FFFFFF;
       }
    }
 }
-
-
-// __________________________________Кнопки_______________________________________
-
-
 .btn {
-   // Фиксированные размеры
    width: 300px;
    height: 65px;
    display: flex;
    justify-content: center;
    align-items: center;
-
-   // Обтекание
-   // padding: 15px 35px;
-
    @include style(1rem, 140%, $font_color_light);
    letter-spacing: 0.1em;
    font-weight: 500;
-
-   // Внутнренняя обводка
    box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(255, 255, 255) inset;
    cursor: pointer;
    &_white {
       background-color: $button_color_light;
       color: $font_color_dark;
-      // border: none;
       &:hover {
          background-color: $button_color_dark;
          color: $font_color_light;
@@ -126,44 +56,23 @@ $modal_bg_color: #FFFFFF;
       background-color: $button_color_dark;
       color: $font_color_light;
       box-shadow: 1px 1px 0 rgb(0, 0, 0) inset, -1px -1px 0 rgb(0, 0, 0) inset;
-      // border: none;
       &:hover {
          background-color: $button_color_light;
          color: $font_color_dark;
-         // border: 1px solid black;
       }
    }
 }
 
-
-// __________________________Тело_____________________________________
-
-
 .wrapper {
    min-height: 100%;
    overflow: hidden;
-
-   //_________________Прибить футер к низу_________________
    display: flex;
    flex-direction: column;
 }
 
 .container {
-   //_________________Ширина контейнера_________________
    max-width: 1110px;
-
-   //_____________________По центру_____________________
    margin: 0 auto;
-
-   //_____________________Отступ безопасности_____________________
    padding: 0px 15px;
    box-sizing: content-box;
 }
-
-
-
-//__________________________show & hide__________________________
-
-
-
-

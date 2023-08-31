@@ -1,15 +1,11 @@
 .contacts {
    min-height: 478px;
    background: url(../img/visitus/visitus__bg.jpg) 0 0 / 100% 100% repeat;
-   &__inner {
-   }
-
    &__subtitle {
       @include style(1.166rem, 140%, $font_color_light);
       text-align: center;
       padding: 100px 20px 0px 20px;
    }
-
    &__title {
       @include style(1.66rem, 140%, $font_color_light);
       text-align: center;
@@ -17,13 +13,11 @@
       padding: 15px 20px 0px 20px;
       margin: 0px 0px 70px 0px;
    }
-
    &__input {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
    }
-   
    &__personal {
       @include style(1rem, 140%, $font_color_light);
       margin: 0px 80px 0px 0px;
@@ -35,7 +29,6 @@
          margin: 0px 0px 15px 0px;
       }
    }
-
    &__link {
       position: relative;
       display: block;
@@ -56,7 +49,6 @@
          }
       }
    }
-
    &__wrapper {
       border: 1px solid white;
       margin: 0px 20px 0px 0px;
@@ -64,7 +56,6 @@
          margin: 0px 15px 100px 15px;
       }
    }
-
    &__email {
       width: 440px;
       align-self: center;
@@ -111,7 +102,6 @@
          &:hover {
             background-color: $button_color_light;
             color: $font_color_dark;
-            // border: 1px solid black;
          }
          @media (max-width:482px) {
             margin: 10px 0px 0px 0px;
